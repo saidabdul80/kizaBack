@@ -1,0 +1,60 @@
+name: Deploy Laravel Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # Step 2: Set up SSH
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Step 3: Debug SSH Key Format (for troubleshooting)
+      - name: Debug SSH Key Format
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | grep "BEGIN" || echo "SSH key format might be incorrect"
+
+      # Step 4: Debug ENV_FILE Content
+      - name: Debug ENV_FILE Content
+        run: |
+          echo "ENV_FILE Content:"
+          echo "${{ secrets.ENV_FILE }}"
+
+      # Step 5: Copy files to cPanel server
+      - name: Copy files to cPanel server
+        run: |
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" . cowrjnkp@68.65.120.114:/home/cowrjnkp/ajo-stage.cowris.com -p21098
+
+      # Step 6: Run deployment commands on cPanel server
+      - name: Run deployment commands on cPanel server
+        run: |
+          ssh -o StrictHostKeyChecking=no cowrjnkp@68.65.120.114 << 'EOF'
+            cd /home/cowrjnkp/ajo-stage.cowris.com
+
+            # Step 7: Stop Laravel Workers (Prevent Concurrent Cache Issues)
+            sudo supervisorctl stop laravel-worker:*
+
+            # Step 8: Install Composer Dependencies as www-data
+            sudo -u www-data composer install
+
+            # Step 9: Run Migrations and Optimize as www-data (with --force)
+            sudo -u www-data php artisan optimize
+            sudo -u www-data php artisan migrate:fresh --seed --force  # Run migrations with --force as well
+
+            # Step 10: Restart PHP-FPM and Laravel Workers
+            sudo systemctl restart php8.3-fpm
+            sudo supervisorctl start laravel-worker:*
+          EOF
