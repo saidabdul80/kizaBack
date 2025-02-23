@@ -53,7 +53,7 @@ return [
         // HTML documentation, assets and Postman collection will be generated to this folder.
         // Source Markdown will still be in resources/docs.
         'output_path' => 'public/docs',
-    ],
+    ],  
 
     'laravel' => [
         // Whether to automatically create a docs endpoint for you to view your generated docs.

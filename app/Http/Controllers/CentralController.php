@@ -687,7 +687,7 @@ class CentralController extends Controller
             'user_type' => 'nullable',
         ]);
         $user = null;
-        $user = User::where('phone_number', $request->username)->orWhere('email', $request->username)->first();
+        $user = User::where('phone', $request->username)->orWhere('email', $request->username)->first();
        
         $otp= mt_rand(100000,999999);
         $otp_expires_at = expires_at(30);
@@ -711,32 +711,32 @@ class CentralController extends Controller
 
     public function confirmForgotPassword(Request $request)
     {
-        // Check if the token exists and is valid
-
+        // Validate request
         $request->validate([
-            'otp' => 'required',
+            'otp' => 'required|string|max:6', // Assuming OTP is a 6-character string
             'email' => 'required|email',
-            'password' => 'required|confirmed|min:6',
+            'password' => 'required|string|confirmed|min:6',
         ]);
-
-        $user = User::where('otp', $request->otp)
-                    ->where('email', $request->email)
+    
+        // Find the user with matching OTP and email, ensuring OTP is not expired
+        $user = User::where('email', $request->email)
+                    ->where('otp', $request->otp)
                     ->where('otp_expires_at', '>=', now())
                     ->first();
-
-        // Return error if the token is invalid or expired
+        // Check if the user exists
         if (!$user) {
-            return view('400', ['message' => 'Invalid or expired OTP.']);
+            return response()->json(['message' => 'Invalid or expired OTP.'], 400);
         }
-
+    
         // Reset the password
-        $user->password = Hash::make('password'); // default password
-        $user->otp = null;
-        $user->otp_expires_at = null;
-        $user->save();
-        return response()->json(['message' => 'Password reset successfully.']);
+        $user->update([
+            'password' => Hash::make($request->password),
+            'otp' => null,
+            'otp_expires_at' => null,
+        ]);
+    
+        return response()->json(['message' => 'Password reset successfully.'], 200);
     }
-
 
     public function validateAccountNumber(Request $request)
     {

@@ -516,7 +516,7 @@ class Util
                 'payee_type' => get_class($userWallet),
                 'payee_id' => $userWallet->id,
             ]);
-            $ajoWallet->total_collection = $ajoWallet->total_collection + $actualAmount;
+         //   $ajoWallet->total_collection = $ajoWallet->total_collection + $actualAmount;
             $ajoWallet->save();
             // Update last compliance date
             $ajoMember->last_date_of_compliance = $lastExpectedDate->format('Y-m-d');

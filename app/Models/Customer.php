@@ -15,7 +15,7 @@ class Customer extends  Authenticatable
         'first_name', 'last_name', 'phone_number', 'email', 'bank_account_details',
         'picture_url', 'nin_slip_url', 'international_passport_url', 'utility_bills_url',
         'drivers_license_url', 'permanent_residence_card_url', 'proof_of_address_url',
-        'email_otp', 'email_verified_at', 'phone_number_otp', 'phone_number_verified_at'
+        'email_otp', 'email_verified_at', 'phone_number_otp', 'phone_number_verified_at','password'
     ];
 
     protected $casts = [
