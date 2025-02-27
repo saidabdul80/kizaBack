@@ -75,8 +75,8 @@ class AuthController extends Controller
     public function registerCustomer(Request $request)
     {
         $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
+            'first_name' => 'required|min:3',
+            'last_name' => 'required|min:3',
             'phone_number' => 'required|unique:customers',
             'email' => 'required|email|unique:customers',
             'password' => 'required|min:6',
