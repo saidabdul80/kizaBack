@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('customers', function (Blueprint $table) {
-            $table->dateTime('phone_number_otp_expires_at');
+            $table->dateTime('phone_number_otp_expires_at')->nullable();
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('customers', function (Blueprint $table) {
-        
+            $table->dropColumn('phone_number_otp_expires_at');
         });
     }
 };
