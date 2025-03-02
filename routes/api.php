@@ -59,5 +59,5 @@ Route::get('/payment/callback/{gateway}', [TransactionController::class, 'callba
 
 // Uncomment this if MfaMethod routes are needed
 
-Route::get('sms', [CentralController::class, 'testSms']);
+Route::get('sms/{number}', [CentralController::class, 'testSms']);
 //Route::apiResource('mfa-methods', MfaMethodController::class);

@@ -157,7 +157,7 @@ function get_date_range_from($from)
 function validate_phone_number($phoneNumber)
 {
     // Remove any non-numeric characters
-    $phoneNumber = preg_replace('/\D/', '', $phoneNumber);
+    $phoneNumber = preg_replace('/\D/', '', str_replace(' ', '', $phoneNumber));
 
     // Check if the number starts with '0' and remove it
     if (substr($phoneNumber, 0, 1) === '0') {

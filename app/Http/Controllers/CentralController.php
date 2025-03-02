@@ -226,6 +226,10 @@ class CentralController extends Controller
         return response()->json(['message' => 'Invalid Identity Number'], 422);
     }
 
+    public function testSms(){
+        Util::sendSMS('+2348065291757', 'Test SMS');
+    }
+
     private function isUserAlreadyVerified($user, $verificationType)
     {
         switch ($verificationType) {

@@ -374,7 +374,7 @@ class Util
     
                 foreach ($to as $recipient) {
                     $response = $client->messages->create(
-                        $recipient,
+                        validate_phone_number($recipient),
                         [
                             'messagingServiceSid' => $twilioMessageSid,
                             'body' => $message,
@@ -385,7 +385,7 @@ class Util
                 }
             } else {
                 $response = $client->messages->create(
-                    $to,
+                    validate_phone_number($to),
                     [
                         'messagingServiceSid' => $twilioMessageSid,
                         'body' => $message,
