@@ -494,7 +494,9 @@ class CentralController extends Controller
             ->where('email', $email)
             ->where('phone_number_otp_expires_at', '>=', now())
             ->first();
-       
+            if(!$user){
+                return response()->json(['message' => 'Invalid Expired OTP'], 400);
+            }
             // Update user to mark the email as verified
             $user->email_otp = null;
             $user->phone_number_otp_expires_at = null;
@@ -712,13 +714,13 @@ class CentralController extends Controller
             'user_type' => 'nullable',
         ]);
         $user = null;
-        $user = User::where('phone', $request->username)->orWhere('email', $request->username)->first();
+        $user = Customer::where('phone_number', $request->username)->orWhere('email', $request->username)->first();
        
-        $otp= mt_rand(100000,999999);
+        $otp= mt_rand(10000,99999);
         $otp_expires_at = expires_at(30);
         if ($user) {
-            $user->otp =$otp;
-            $user->otp_expires_at =  $otp_expires_at;
+            $user->email_otp =$otp;
+            $user->phone_number_otp_expires_at =  $otp_expires_at;
             $user->save();
             $data = [];
             // $util = Util::GenericUtils($user->email,expires_at(30),,$user?->id, 'user','forgot_password');
@@ -744,9 +746,9 @@ class CentralController extends Controller
         ]);
     
         // Find the user with matching OTP and email, ensuring OTP is not expired
-        $user = User::where('email', $request->email)
-                    ->where('otp', $request->otp)
-                    ->where('otp_expires_at', '>=', now())
+        $user = Customer::where('email', $request->email)
+                    ->where('email_otp', $request->otp)
+                    ->where('phone_number_otp_expires_at', '>=', now())
                     ->first();
         // Check if the user exists
         if (!$user) {
@@ -756,8 +758,8 @@ class CentralController extends Controller
         // Reset the password
         $user->update([
             'password' => Hash::make($request->password),
-            'otp' => null,
-            'otp_expires_at' => null,
+            'email_otp' => null,
+            'phone_number_otp_expires_at' => null,
         ]);
     
         return response()->json(['message' => 'Password reset successfully.'], 200);
