@@ -178,9 +178,9 @@ function validate_phone_number($phoneNumber)
 }
 
 
-function generate_random_number($length = 6)
+function generate_random_number($length = 5)
 {
-    return str_pad(mt_rand(0, 999999), $length, '0', STR_PAD_LEFT);
+    return str_pad(mt_rand(0, 99999), $length, '0', STR_PAD_LEFT);
 }
 
 function expires_at($t = 30)

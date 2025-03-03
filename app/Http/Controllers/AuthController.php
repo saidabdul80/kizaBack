@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\UserResource;
 use App\Jobs\QueueMail;
+use App\Mail\SendMailNoQueue;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Services\Util;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
-
+use Illuminate\Support\Facades\Mail;
 class AuthController extends Controller
 {
     public function register(Request $request)
@@ -82,18 +85,42 @@ class AuthController extends Controller
             'password' => 'required|min:6',
         ]);
 
-        $customer = Customer::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'phone_number' => $request->phone_number,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        DB::beginTransaction();
+            try {
+            $customer = Customer::create([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'phone_number' => $request->phone_number,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
 
-        return response()->json([
-            'token' => $customer->createToken('customer_token')->plainTextToken,
-            'customer' => $customer
-        ]);
+            $code = generate_random_number();
+            $mailCode = generate_random_number();
+            $expired_at = expires_at();
+            $customer->update([
+                'email_otp' => $mailCode,
+                'phone_number_otp' => $code,
+                'phone_number_otp_expires_at' => $expired_at
+            ]);
+        
+            Util::sendSMS($customer->phone_number, 'Your OTP code is ' . $code . ' and expires in 10 minutes.', 'single');
+            Mail::to($customer->email)->send(new SendMailNoQueue('otp','Kiza Email Verification',[
+                'name' => $customer->first_name,
+                'otp' => $mailCode,
+                'expired_at' => $expired_at
+            ]));
+
+            DB::commit();
+            return response()->json([
+                'token' => $customer->createToken('customer_token')->plainTextToken,
+                'customer' => $customer
+            ]);
+        }catch(\Exception $e){
+            DB::rollBack();
+            return $e;
+            return response()->json(['message' => 'Something went wrong. Please try again.'], 400);
+        }
     }
 
     public function loginCustomer(Request $request)

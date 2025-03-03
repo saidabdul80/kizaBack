@@ -24,6 +24,7 @@ use App\Mail\SendMail;
 use App\Mail\SendMailNoQueue;
 use App\Models\Ajo;
 use App\Models\AjoMember;
+use App\Models\Customer;
 use App\Models\User;
 use App\Models\Wallet;
 use App\Models\WalletTransaction;
@@ -226,7 +227,8 @@ class CentralController extends Controller
         return response()->json(['message' => 'Invalid Identity Number'], 422);
     }
 
-    public function testSms(){
+    public function testSms($number){
+
         Util::sendSMS('+2348065291757', 'Test SMS');
     }
 
@@ -479,45 +481,52 @@ class CentralController extends Controller
 
     public function verifyEmail(Request $request)
     {
+        $request->validate([
+            'email' => 'required|string|exists:customers,email',
+            'otp' => 'required|string|exists:customers,email_otp'
+        ]);
+
         $email = $request->email;
-        $token = $request->token;
+        $token = $request->otp;
     
         // Find the user with the provided token and email, and ensure the token is not expired
-        $user = User::where('otp', $token)
+        $user = Customer::where('email_otp', $token)
             ->where('email', $email)
-            ->where('otp_expires_at', '>=', now())
+            ->where('phone_number_otp_expires_at', '>=', now())
             ->first();
        
-        if ($user) {
             // Update user to mark the email as verified
-            $user->otp = null;
-            $user->otp_expires_at = null;
+            $user->email_otp = null;
+            $user->phone_number_otp_expires_at = null;
             $user->email_verified_at = now();
-            $user->is_verified_email = 1;
             $user->save();
     
             // Dispatch the email verified event
-            EmailVerified::dispatch($user);
+            Mail::to($user->email)->send(new SendMailNoQueue('account_created','Kiza Email Verification', [
+                'full_name' => $user->first_name . ' ' . $user->last_name
+
+            ]));
     
-            return response()->json(['success' => true], 200);
-        }
-    
-        // Return a JSON response with a 400 status code for invalid or expired token
-        return response()->json(['success' => false, 'message' => 'Invalid or expired token.'], 400);
+            return response()->json(['success' => 'Email verified successfully.'], 200);
+
     }
 
     public function resendPhoneNumberVerification(Request $request)
     {
-        $request->validate([
-            'phone_number' => 'required|string|min:10|unique:users,phone_number,' . $request->user()->id,
-        ]);
     
+        $request->validate([
+            'phone_number' => 'required|string|min:10|exists:users,phone_number'
+        ]);
+        
+        $user = Customer::where('phone_number', $request->phone_number)->first();
+        if(!$user){
+            return response()->json(['message' => 'Invalid phone number.'], 400);
+        }
         $phone_number = $request->phone_number;
         $code = generate_random_number();
         $expired_at = expires_at();
         $user = $request->user();
         $user->update([
-            'phone_number' => $request->phone_number,
             'phone_number_otp' => $code,
             'phone_number_otp_expires_at' => $expired_at
         ]);
@@ -530,31 +539,43 @@ class CentralController extends Controller
     public function confirmPhoneNumberVerification(Request $request)
     {
         $request->validate([
-            'phone_number' => 'required|string|unique:users,phone_number,'. $request->user()->id,
+            'phone_number' => 'required|string|exists:customers,phone_number',
             'otp' => 'required|string',
         ]);
 
-        $res = Util::verifyPhoneNumber($request);
-        if($res){
-            return response()->json(['message' => 'Phone number verified successfully.'], 200);
-        }else{
-            return response()->json(['message' => 'Invalid or expired OTP.'], 400);
+        $customer = Customer::where([
+            'phone_number'=>$request->phone_number,
+            'phone_number_otp'=>$request->otp,
+            ])->where('phone_number_otp_expires_at','>',now())->first();
+
+        if(!$customer){
+            return response()->json(['message' => 'Invalid phone number. or expired OTP.'], 400);
         }
+      
+        $customer->update([
+            'phone_number_verified_at' => now(),
+            'phone_number_otp' => null,
+        ]);
+
+        return response()->json(['message' => 'Phone number verified successfully.'], 200);
 
     }
 
     public function resendEmailVerification(Request $request)
     {
         $request->validate([
-            'email' => 'required|email'
+            'email' => 'required|email,exists:users,email'
         ]);
 
         $email = $request->email;
         $code = generate_random_number();
         $expired_at = expires_at();
-        $user = User::where('email', $email)->first();
+        $user = Customer::where('email', $email)->first();
+        if(!$user){
+            return response()->json(['message' => 'Invalid email.'], 400);
+        }
         $user->otp = $code;
-        $user->otp_expires_at = $expired_at;
+        $user->phone_number_otp_expires_at = $expired_at;
         $user->save();
         //$data = Util::OTPUtils($user, $expired_at, $code);
         //AccountCreated::dispatch($user);
@@ -570,7 +591,7 @@ class CentralController extends Controller
             "user_type" =>'user',
             "name" => $user->full_name  
         ];
-        Mail::to($user->email)->send(new SendMailNoQueue('otp', "Account Verification", $data));
+        Mail::to($user->email)->send(new SendMailNoQueue('otp','Kiza Email Verification', $data));
         return response()->json(['message' => 'Email han been resent.'], 200);
     }
 

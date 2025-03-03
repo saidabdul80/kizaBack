@@ -52,7 +52,7 @@ return [
         'backend'=> env('APP_ENV') == 'local' ? 'https://ajo-stage.cowris.com/api':'https://ajo-app.com/api',
         'domain' => env('APP_ENV') == 'local' ? 'https://ajo2-zom3.vercel.app/' : 'https://ajo2-zom3.vercel.app',
     ],
-    "title"=>"Gombe Internal Revenue (GIRS)",
+    "title"=>"Kiza",
     "email"=>"info@com",
     "twilio_account_sid" => env('TWILIO_ACCOUNT_SID'),
     "twilio_auth_token" => env('TWILIO_AUTH_TOKEN'),

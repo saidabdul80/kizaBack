@@ -35,13 +35,13 @@ Route::middleware('auth:sanctum')->group(function () {
     // Exchange Rates
     Route::apiResource('exchange-rates', ExchangeRateController::class);
 
-    Route::post('/resend_phone_number_verification', [CentralController::class, 'resendPhoneNumberVerification']);
-    Route::post('/confirm_phone_number_verification', [CentralController::class, 'confirmPhoneNumberVerification']);
-
+    
     
     
 });
-Route::get('/verify_email/{token?}/{email?}', [CentralController::class, 'verifyEmail']); 
+Route::post('/resend_phone_number_verification', [CentralController::class, 'resendPhoneNumberVerification']);
+Route::post('/confirm_phone_number_verification', [CentralController::class, 'confirmPhoneNumberVerification']);
+Route::post('/verify_email', [CentralController::class, 'verifyEmail']); 
 Route::get('/confirm-change-email/{token}', [CentralController::class, 'confirmChangeEmail']); 
 
 Route::post('/resend_email_verification', [CentralController::class, 'resendEmailVerification']);

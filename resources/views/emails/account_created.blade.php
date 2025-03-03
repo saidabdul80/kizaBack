@@ -78,25 +78,14 @@
     <div class="email-container">
       <div class="header">
 
-        <img src="<?= asset('logo_full') ?>" alt="Ajo Logo" width="200">
+        <img src="<?= asset('logo_full') ?>" alt="Kiza Logo" width="200">
         
       </div>
       <div class="content">
-        <h2>
-          Ajo Account Created<br />
-          Successfully!
-        </h2>
         <p>Dear {{$data['full_name']}},</p>
         <p class="paragraph">
-          You have now been added as with the following
-          credentials:
+          Your email at Kiza has now been verified. You can now proceed to login.
         </p>
-        <div class="credentials">
-          <p>Email: {{$data['email']}}</p>
-          <p>Password: {{$data['password']}}</p>
-        </div>
-        <p>Procceed to login.</p>
-        <a href="{{config('default.portal.domain')}}/login" style="color:white" class="button">Login Now</a>
       </div>
       <div class="footer">
         &copy;  <?= date('Y') ?> {{config('default.title')}}. All rights reserved.

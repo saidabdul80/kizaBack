@@ -83,16 +83,13 @@ use App\Services\Util;
         
       </div>
       <div class="content">
-        <h2>Verify your Account.</h2>
+        <p>Dear $data['name'],</p>
         <p>
          Your OTP code is:
         </p>
 
         <div class="otp-code"> {{$data['otp']}}</div>
-        <p>This code expires after 10 minutes.</p>
-        <p style="margin:6px auto; font-size:16px; font-weight:bold;">OR</p>
-        <p>Complete your account verification using the button below :</p>
-        <a class="button" style="color:white;" href="{{config('default.portal.backend')}}/verify_email/{{$data['token']}}">Verify Email Here</a>
+        <p>This code expires after 15 minutes.</p>
         <p>If you didn't initiate this OTP, please ignore this mail.</p>
       </div>
       <div class="footer">
