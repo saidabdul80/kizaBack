@@ -8,7 +8,7 @@ class SavedRecipient extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['customer_id', 'name', 'phone', 'bank_account_details'];
+    protected $fillable = ['customer_id', 'first_name','last_name', 'phone_number','email', 'bank_name','account_name', 'account_number'];
 
     public function customer()
     {

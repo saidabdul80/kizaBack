@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,11 +9,9 @@ class ExchangeRate extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['currency_id_from', 'currency_id_to', 'rate'];
+    protected $fillable = ['currency_id_from', 'currency_id_to', 'rate', 'is_active'];
 
-    protected $casts = [
-        'rate' => 'decimal:4',
-    ];
+    protected $casts = ['rate' => 'decimal:6', 'is_active' => 'boolean'];
 
     public function currencyFrom()
     {

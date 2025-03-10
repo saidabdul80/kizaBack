@@ -24,9 +24,9 @@ endpoints:
     bodyParameters:
       first_name:
         name: first_name
-        description: ''
+        description: 'Must be at least 3 characters.'
         required: true
-        example: eligendi
+        example: tbzzelykewqcvdgslbewzqwvkp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -34,9 +34,9 @@ endpoints:
         custom: []
       last_name:
         name: last_name
-        description: ''
+        description: 'Must be at least 3 characters.'
         required: true
-        example: velit
+        example: yqlcdzlrzuci
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -46,7 +46,7 @@ endpoints:
         name: phone_number
         description: ''
         required: true
-        example: error
+        example: illum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -56,7 +56,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: fernando47@example.com
+        example: sonny82@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -66,18 +66,18 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: '`;_Vj!`j#XwpM'
+        example: LCU6ns4
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      first_name: eligendi
-      last_name: velit
-      phone_number: error
-      email: fernando47@example.com
-      password: '`;_Vj!`j#XwpM'
+      first_name: tbzzelykewqcvdgslbewzqwvkp
+      last_name: yqlcdzlrzuci
+      phone_number: illum
+      email: sonny82@example.com
+      password: LCU6ns4
     fileParameters: []
     responses: []
     responseFields: []
@@ -111,7 +111,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: ross01@example.com
+        example: dereck34@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -121,15 +121,15 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: esse
+        example: distinctio
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: ross01@example.com
-      password: esse
+      email: dereck34@example.org
+      password: distinctio
     fileParameters: []
     responses: []
     responseFields: []
@@ -163,11 +163,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
-        content: |-
-          {
-              "message": "The route api/login could not be found."
-          }
+        status: 200
+        content: '{"message":"Login is not allowed for public routes"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -205,11 +202,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
-        content: |-
-          {
-              "message": "The route api/unauth_bootstrap could not be found."
-          }
+        status: 200
+        content: '[]'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -277,11 +271,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
-        content: |-
-          {
-              "message": "The route api/bootstrap could not be found."
-          }
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -319,11 +310,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
-        content: |-
-          {
-              "message": "The route api/users could not be found."
-          }
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -361,7 +349,7 @@ endpoints:
         name: first_name
         description: ''
         required: true
-        example: mollitia
+        example: odit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -371,7 +359,7 @@ endpoints:
         name: last_name
         description: ''
         required: true
-        example: accusantium
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -381,7 +369,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: schinner.buddy@example.com
+        example: freddie.anderson@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -391,7 +379,7 @@ endpoints:
         name: phone_number
         description: ''
         required: true
-        example: tenetur
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -401,18 +389,18 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: 'gkKrOtS"8vC`LhT!'
+        example: '^]6KsJ8?IGRP#yU`H'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      first_name: mollitia
-      last_name: accusantium
-      email: schinner.buddy@example.com
-      phone_number: tenetur
-      password: 'gkKrOtS"8vC`LhT!'
+      first_name: odit
+      last_name: rerum
+      email: freddie.anderson@example.net
+      phone_number: aut
+      password: '^]6KsJ8?IGRP#yU`H'
     fileParameters: []
     responses: []
     responseFields: []
@@ -442,14 +430,14 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: illum
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: illum
+      id: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -457,11 +445,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
-        content: |-
-          {
-              "message": "The route api/users/illum could not be found."
-          }
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -496,14 +481,14 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: sapiente
+        example: nesciunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: sapiente
+      id: nesciunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -511,7 +496,7 @@ endpoints:
         name: first_name
         description: ''
         required: true
-        example: est
+        example: non
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -521,7 +506,7 @@ endpoints:
         name: last_name
         description: ''
         required: true
-        example: quo
+        example: esse
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -551,16 +536,16 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: '"$vN!d?;"gvJX>znZHG'
+        example: "7fFJ5U<'5:.lJZ"
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      first_name: est
-      last_name: quo
-      password: '"$vN!d?;"gvJX>znZHG'
+      first_name: non
+      last_name: esse
+      password: "7fFJ5U<'5:.lJZ"
     fileParameters: []
     responses: []
     responseFields: []
@@ -590,14 +575,14 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: unde
+        example: aliquid
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: unde
+      id: aliquid
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -645,7 +630,7 @@ endpoints:
         name: id
         description: 'The <code>id</code> of an existing record in the users table.'
         required: true
-        example: eos
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -655,7 +640,7 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: utility_bills
+        example: drivers_license
         type: string
         enumValues:
           - nin_slip
@@ -669,8 +654,8 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      id: eos
-      type: utility_bills
+      id: voluptatem
+      type: drivers_license
     fileParameters:
       file: null
     responses: []
@@ -701,14 +686,14 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: quidem
+        example: veniam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quidem
+      id: veniam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -726,7 +711,7 @@ endpoints:
         name: notify_ajo_alerts
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -754,7 +739,7 @@ endpoints:
         custom: []
     cleanBodyParameters:
       notify_security_alerts: true
-      notify_ajo_alerts: false
+      notify_ajo_alerts: true
       notify_product_announcements: true
       notify_support_tickets: true
     fileParameters: []
@@ -786,14 +771,14 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: sed
+        example: molestiae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: sed
+      id: molestiae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -801,7 +786,7 @@ endpoints:
         name: account_number
         description: ''
         required: false
-        example: error
+        example: nemo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -811,7 +796,7 @@ endpoints:
         name: bank_name
         description: ''
         required: false
-        example: aperiam
+        example: ipsam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -821,16 +806,16 @@ endpoints:
         name: account_name
         description: ''
         required: false
-        example: velit
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      account_number: error
-      bank_name: aperiam
-      account_name: velit
+      account_number: nemo
+      bank_name: ipsam
+      account_name: et
     fileParameters: []
     responses: []
     responseFields: []
@@ -864,11 +849,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
-        content: |-
-          {
-              "message": "The route api/customers could not be found."
-          }
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -902,14 +884,14 @@ endpoints:
         name: id
         description: 'The ID of the customer.'
         required: true
-        example: cupiditate
+        example: at
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: cupiditate
+      id: at
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -917,11 +899,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
-        content: |-
-          {
-              "message": "The route api/customers/cupiditate could not be found."
-          }
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -956,14 +935,14 @@ endpoints:
         name: id
         description: 'The ID of the customer.'
         required: true
-        example: 20
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 20
+      id: 18
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1017,14 +996,14 @@ endpoints:
         name: id
         description: 'The ID of the customer.'
         required: true
-        example: 11
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 11
+      id: 4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1062,11 +1041,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
-        content: |-
-          {
-              "message": "The route api/transactions could not be found."
-          }
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -1104,7 +1080,7 @@ endpoints:
         name: customer_id
         description: 'The <code>id</code> of an existing record in the customers table.'
         required: true
-        example: eum
+        example: sint
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1112,19 +1088,29 @@ endpoints:
         custom: []
       amount:
         name: amount
-        description: ''
+        description: 'Must be at least 0.01.'
         required: true
-        example: 36448784.47045
+        example: 12
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      currency_id:
-        name: currency_id
+      currency_id_from:
+        name: currency_id_from
         description: 'The <code>id</code> of an existing record in the currencies table.'
         required: true
-        example: sed
+        example: voluptate
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      currency_id_to:
+        name: currency_id_to
+        description: 'The <code>id</code> of an existing record in the currencies table.'
+        required: true
+        example: pariatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1134,29 +1120,19 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: deposit
+        example: send
         type: string
         enumValues:
-          - deposit
-          - fulfill
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      rate:
-        name: rate
-        description: ''
-        required: true
-        example: 317339.3042017
-        type: number
-        enumValues: []
+          - send
+          - receive
         exampleWasSpecified: false
         nullable: false
         custom: []
       fees:
         name: fees
-        description: ''
+        description: 'Must be at least 0.'
         required: true
-        example: 256832046.22302
+        example: 8
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1176,20 +1152,119 @@ endpoints:
         name: reference
         description: ''
         required: true
-        example: facilis
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      save_recipient:
+        name: save_recipient
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      recipient:
+        name: recipient
+        description: ''
+        required: true
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      recipient.first_name:
+        name: recipient.first_name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: kacslodujripwoztbpz
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      recipient.last_name:
+        name: recipient.last_name
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: jdlvzuqhzfwvplyvwjrlkemb
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      recipient.phone_number:
+        name: recipient.phone_number
+        description: 'Must not be greater than 15 characters.'
+        required: true
+        example: zhyqdnqnxec
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      recipient.email:
+        name: recipient.email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        required: false
+        example: orn.lesley@example.net
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      recipient.bank_name:
+        name: recipient.bank_name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: wieyjizj
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      recipient.account_name:
+        name: recipient.account_name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: bfueq
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      recipient.account_number:
+        name: recipient.account_number
+        description: 'Must not be greater than 50 characters.'
+        required: true
+        example: dqmphfkvvefsnnkqfquubm
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      customer_id: eum
-      amount: 36448784.47045
-      currency_id: sed
-      type: deposit
-      rate: 317339.3042017
-      fees: 256832046.22302
-      reference: facilis
+      customer_id: sint
+      amount: 12
+      currency_id_from: voluptate
+      currency_id_to: pariatur
+      type: send
+      fees: 8
+      reference: et
+      save_recipient: true
+      recipient:
+        first_name: kacslodujripwoztbpz
+        last_name: jdlvzuqhzfwvplyvwjrlkemb
+        phone_number: zhyqdnqnxec
+        email: orn.lesley@example.net
+        bank_name: wieyjizj
+        account_name: bfueq
+        account_number: dqmphfkvvefsnnkqfquubm
     fileParameters: []
     responses: []
     responseFields: []
@@ -1219,14 +1294,14 @@ endpoints:
         name: id
         description: 'The ID of the transaction.'
         required: true
-        example: et
+        example: commodi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: commodi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1234,11 +1309,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
-        content: |-
-          {
-              "message": "The route api/transactions/et could not be found."
-          }
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -1273,14 +1345,14 @@ endpoints:
         name: id
         description: 'The ID of the transaction.'
         required: true
-        example: 3
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 3
+      id: 19
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1288,7 +1360,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: initiated
+        example: processing
         type: string
         enumValues:
           - initiated
@@ -1299,7 +1371,7 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      status: initiated
+      status: processing
     fileParameters: []
     responses: []
     responseFields: []
@@ -1329,14 +1401,14 @@ endpoints:
         name: id
         description: 'The ID of the transaction.'
         required: true
-        example: 20
+        example: 13
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 20
+      id: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1374,11 +1446,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
-        content: |-
-          {
-              "message": "The route api/exchange-rates could not be found."
-          }
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -1416,7 +1485,7 @@ endpoints:
         name: currency_id_from
         description: 'The <code>id</code> of an existing record in the currencies table.'
         required: true
-        example: impedit
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1426,7 +1495,7 @@ endpoints:
         name: currency_id_to
         description: 'The <code>id</code> of an existing record in the currencies table.'
         required: true
-        example: earum
+        example: iure
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1436,16 +1505,16 @@ endpoints:
         name: rate
         description: ''
         required: true
-        example: 46894807.07588
+        example: 0.9
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      currency_id_from: impedit
-      currency_id_to: earum
-      rate: 46894807.07588
+      currency_id_from: et
+      currency_id_to: iure
+      rate: 0.9
     fileParameters: []
     responses: []
     responseFields: []
@@ -1476,14 +1545,14 @@ endpoints:
         name: id
         description: 'The ID of the exchange rate.'
         required: true
-        example: 11
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 11
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1491,14 +1560,14 @@ endpoints:
         name: rate
         description: ''
         required: true
-        example: 53.3176855
+        example: 3.63085047
         type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      rate: 53.3176855
+      rate: 3.63085047
     fileParameters: []
     responses: []
     responseFields: []
@@ -1528,14 +1597,14 @@ endpoints:
         name: id
         description: 'The ID of the exchange rate.'
         required: true
-        example: 7
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 7
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1551,7 +1620,137 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/verify_email/{token?}/{email?}'
+    uri: api/saved-recipients
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the saved recipients.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/saved-recipients/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified saved recipient.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the saved recipient.'
+        required: true
+        example: consectetur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: consectetur
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/saved-recipients/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified saved recipient from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the saved recipient.'
+        required: true
+        example: earum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: earum
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/exchange_rates/{currencyCode}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -1565,29 +1764,18 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      token:
-        name: token
+      currencyCode:
+        name: currencyCode
         description: ''
-        required: false
-        example: voluptates
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      email:
-        name: email
-        description: ''
-        required: false
-        example: jaquan.donnelly@example.net
-        type: string
+        required: true
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      token: voluptates
-      email: jaquan.donnelly@example.net
+      currencyCode: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1596,16 +1784,158 @@ endpoints:
     responses:
       -
         status: 404
-        content: |-
-          {
-              "message": "The route api/verify_email/voluptates/jaquan.donnelly@example.net could not be found."
-          }
+        content: '{"message":"Currency not found"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
         description: null
         custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/resend_phone_number_verification
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      phone_number:
+        name: phone_number
+        description: 'The <code>phone_number</code> of an existing record in the users table. Must be at least 10 characters.'
+        required: true
+        example: rqlcnuosbdxqshqopeeovnln
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      phone_number: rqlcnuosbdxqshqopeeovnln
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/confirm_phone_number_verification
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      phone_number:
+        name: phone_number
+        description: 'The <code>phone_number</code> of an existing record in the customers table.'
+        required: true
+        example: aliquam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      otp:
+        name: otp
+        description: ''
+        required: true
+        example: aut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      phone_number: aliquam
+      otp: aut
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/verify_email
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'The <code>email</code> of an existing record in the customers table.'
+        required: true
+        example: dhills@example.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      otp:
+        name: otp
+        description: 'The <code>email_otp</code> of an existing record in the customers table.'
+        required: true
+        example: est
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      email: dhills@example.org
+      otp: est
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -1633,14 +1963,14 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: aut
+        example: ipsam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      token: aut
+      token: ipsam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1648,10 +1978,10 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
+        status: 500
         content: |-
           {
-              "message": "The route api/confirm-change-email/aut could not be found."
+              "message": "Server Error"
           }
         headers:
           cache-control: 'no-cache, private'
@@ -1688,16 +2018,16 @@ endpoints:
     bodyParameters:
       email:
         name: email
-        description: 'Must be a valid email address.'
+        description: ''
         required: true
-        example: ilind@example.net
+        example: quam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: ilind@example.net
+      email: quam
     fileParameters: []
     responses: []
     responseFields: []
@@ -1731,7 +2061,7 @@ endpoints:
         name: username
         description: ''
         required: true
-        example: et
+        example: accusamus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1748,7 +2078,7 @@ endpoints:
         nullable: true
         custom: []
     cleanBodyParameters:
-      username: et
+      username: accusamus
     fileParameters: []
     responses: []
     responseFields: []
@@ -1780,9 +2110,9 @@ endpoints:
     bodyParameters:
       otp:
         name: otp
-        description: ''
+        description: 'Must not be greater than 6 characters.'
         required: true
-        example: cupiditate
+        example: hjvc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1790,9 +2120,9 @@ endpoints:
         custom: []
       email:
         name: email
-        description: 'Must be a valid email address.'
+        description: 'Assuming OTP is a 6-character string. Must be a valid email address.'
         required: true
-        example: ricky33@example.net
+        example: jkunde@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1802,16 +2132,16 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: ">L;YM'#x6o)K${."
+        example: ']zaA"6Ni!gp'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      otp: cupiditate
-      email: ricky33@example.net
-      password: ">L;YM'#x6o)K${."
+      otp: hjvc
+      email: jkunde@example.net
+      password: ']zaA"6Ni!gp'
     fileParameters: []
     responses: []
     responseFields: []
@@ -1845,7 +2175,7 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: voluptatem
+        example: earum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1855,17 +2185,67 @@ endpoints:
         name: type_id
         description: ''
         required: true
-        example: sequi
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      type: voluptatem
-      type_id: sequi
+      type: earum
+      type_id: voluptas
     fileParameters: []
     responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/sms/{number}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      number:
+        name: number
+        description: ''
+        required: true
+        example: laudantium
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      number: laudantium
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: ''
+        headers:
+          content-type: 'text/html; charset=UTF-8'
+          cache-control: 'no-cache, private'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null

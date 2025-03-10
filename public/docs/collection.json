@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost:8004\/"
+            "value": "http:\/\/localhost:8004"
         }
     ],
     "info": {
-        "name": "Ajo By Cowris",
-        "_postman_id": "6fe287fb-ebb6-4696-8844-700077e87dbc",
+        "name": "KIZA",
+        "_postman_id": "d6769851-5fd5-4bad-acdf-c35e50861a39",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"eligendi\",\"last_name\":\"velit\",\"phone_number\":\"error\",\"email\":\"fernando47@example.com\",\"password\":\"`;_Vj!`j#XwpM\"}"
+                            "raw": "{\"first_name\":\"tbzzelykewqcvdgslbewzqwvkp\",\"last_name\":\"yqlcdzlrzuci\",\"phone_number\":\"illum\",\"email\":\"sonny82@example.com\",\"password\":\"LCU6ns4\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"ross01@example.com\",\"password\":\"esse\"}"
+                            "raw": "{\"email\":\"dereck34@example.org\",\"password\":\"distinctio\"}"
                         },
                         "description": "",
                         "auth": {
@@ -123,8 +123,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/login could not be found.\"\n}",
+                            "code": 200,
+                            "body": "{\"message\":\"Login is not allowed for public routes\"}",
                             "name": ""
                         }
                     ]
@@ -171,8 +171,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/unauth_bootstrap could not be found.\"\n}",
+                            "code": 200,
+                            "body": "[]",
                             "name": ""
                         }
                     ]
@@ -247,8 +247,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/bootstrap could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -295,8 +295,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/users could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -323,7 +323,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"mollitia\",\"last_name\":\"accusantium\",\"email\":\"schinner.buddy@example.com\",\"phone_number\":\"tenetur\",\"password\":\"gkKrOtS\\\"8vC`LhT!\"}"
+                            "raw": "{\"first_name\":\"odit\",\"last_name\":\"rerum\",\"email\":\"freddie.anderson@example.net\",\"phone_number\":\"aut\",\"password\":\"^]6KsJ8?IGRP#yU`H\"}"
                         },
                         "description": "",
                         "auth": {
@@ -344,7 +344,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "illum",
+                                    "value": "et",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -382,8 +382,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/users\/illum could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -400,7 +400,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sapiente",
+                                    "value": "nesciunt",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -418,7 +418,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"est\",\"last_name\":\"quo\",\"password\":\"\\\"$vN!d?;\\\"gvJX>znZHG\"}"
+                            "raw": "{\"first_name\":\"non\",\"last_name\":\"esse\",\"password\":\"7fFJ5U<'5:.lJZ\"}"
                         },
                         "description": "",
                         "auth": {
@@ -439,7 +439,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "unde",
+                                    "value": "aliquid",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -488,13 +488,13 @@
                             "formdata": [
                                 {
                                     "key": "id",
-                                    "value": "eos",
+                                    "value": "voluptatem",
                                     "type": "text",
                                     "description": "The <code>id<\/code> of an existing record in the users table."
                                 },
                                 {
                                     "key": "type",
-                                    "value": "utility_bills",
+                                    "value": "drivers_license",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -524,7 +524,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quidem",
+                                    "value": "veniam",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -542,7 +542,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"notify_security_alerts\":true,\"notify_ajo_alerts\":false,\"notify_product_announcements\":true,\"notify_support_tickets\":true}"
+                            "raw": "{\"notify_security_alerts\":true,\"notify_ajo_alerts\":true,\"notify_product_announcements\":true,\"notify_support_tickets\":true}"
                         },
                         "description": "",
                         "auth": {
@@ -563,7 +563,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sed",
+                                    "value": "molestiae",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -581,7 +581,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"account_number\":\"error\",\"bank_name\":\"aperiam\",\"account_name\":\"velit\"}"
+                            "raw": "{\"account_number\":\"nemo\",\"bank_name\":\"ipsam\",\"account_name\":\"et\"}"
                         },
                         "description": "",
                         "auth": {
@@ -632,8 +632,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/customers could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -650,7 +650,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "cupiditate",
+                                    "value": "at",
                                     "description": "The ID of the customer."
                                 }
                             ]
@@ -688,8 +688,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/customers\/cupiditate could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -706,7 +706,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "18",
                                     "description": "The ID of the customer."
                                 }
                             ]
@@ -745,7 +745,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "11",
+                                    "value": "4",
                                     "description": "The ID of the customer."
                                 }
                             ]
@@ -811,8 +811,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/transactions could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -839,7 +839,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"customer_id\":\"eum\",\"amount\":36448784.47045,\"currency_id\":\"sed\",\"type\":\"deposit\",\"rate\":317339.3042017,\"fees\":256832046.22301784,\"reference\":\"facilis\"}"
+                            "raw": "{\"customer_id\":\"sint\",\"amount\":12,\"currency_id_from\":\"voluptate\",\"currency_id_to\":\"pariatur\",\"type\":\"send\",\"fees\":8,\"reference\":\"et\",\"save_recipient\":true,\"recipient\":{\"first_name\":\"kacslodujripwoztbpz\",\"last_name\":\"jdlvzuqhzfwvplyvwjrlkemb\",\"phone_number\":\"zhyqdnqnxec\",\"email\":\"orn.lesley@example.net\",\"bank_name\":\"wieyjizj\",\"account_name\":\"bfueq\",\"account_number\":\"dqmphfkvvefsnnkqfquubm\"}}"
                         },
                         "description": "",
                         "auth": {
@@ -860,7 +860,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "commodi",
                                     "description": "The ID of the transaction."
                                 }
                             ]
@@ -898,8 +898,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/transactions\/et could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -916,7 +916,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "19",
                                     "description": "The ID of the transaction."
                                 }
                             ]
@@ -934,7 +934,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"status\":\"initiated\"}"
+                            "raw": "{\"status\":\"processing\"}"
                         },
                         "description": "",
                         "auth": {
@@ -955,7 +955,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "13",
                                     "description": "The ID of the transaction."
                                 }
                             ]
@@ -1021,8 +1021,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/exchange-rates could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -1049,7 +1049,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"currency_id_from\":\"impedit\",\"currency_id_to\":\"earum\",\"rate\":46894807.07588}"
+                            "raw": "{\"currency_id_from\":\"et\",\"currency_id_to\":\"iure\",\"rate\":0.9}"
                         },
                         "description": "",
                         "auth": {
@@ -1070,7 +1070,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "11",
+                                    "value": "1",
                                     "description": "The ID of the exchange rate."
                                 }
                             ]
@@ -1088,7 +1088,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"rate\":53.3176855}"
+                            "raw": "{\"rate\":3.63085047}"
                         },
                         "description": "",
                         "auth": {
@@ -1109,7 +1109,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "7",
+                                    "value": "1",
                                     "description": "The ID of the exchange rate."
                                 }
                             ]
@@ -1134,24 +1134,158 @@
                     "response": []
                 },
                 {
-                    "name": "GET api\/verify_email\/{token?}\/{email?}",
+                    "name": "Display a listing of the saved recipients.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/verify_email\/:token\/:email",
+                            "path": "api\/saved-recipients",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/verify_email\/:token\/:email",
-                            "variable": [
+                            "raw": "{{baseUrl}}\/api\/saved-recipients"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
                                 {
-                                    "id": "token",
-                                    "key": "token",
-                                    "value": "voluptates",
-                                    "description": ""
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
                                 },
                                 {
-                                    "id": "email",
-                                    "key": "email",
-                                    "value": "jaquan.donnelly%40example.net",
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display the specified saved recipient.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/saved-recipients\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/saved-recipients\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "consectetur",
+                                    "description": "The ID of the saved recipient."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Remove the specified saved recipient from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/saved-recipients\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/saved-recipients\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "earum",
+                                    "description": "The ID of the saved recipient."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/exchange_rates\/{currencyCode}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/exchange_rates\/:currencyCode",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/exchange_rates\/:currencyCode",
+                            "variable": [
+                                {
+                                    "id": "currencyCode",
+                                    "key": "currencyCode",
+                                    "value": "1",
                                     "description": ""
                                 }
                             ]
@@ -1190,10 +1324,103 @@
                                 }
                             ],
                             "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/verify_email\/voluptates\/jaquan.donnelly@example.net could not be found.\"\n}",
+                            "body": "{\"message\":\"Currency not found\"}",
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "POST api\/resend_phone_number_verification",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/resend_phone_number_verification",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/resend_phone_number_verification"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"phone_number\":\"rqlcnuosbdxqshqopeeovnln\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/confirm_phone_number_verification",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/confirm_phone_number_verification",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/confirm_phone_number_verification"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"phone_number\":\"aliquam\",\"otp\":\"aut\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/verify_email",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/verify_email",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/verify_email"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"dhills@example.org\",\"otp\":\"est\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 },
                 {
                     "name": "GET api\/confirm-change-email\/{token}",
@@ -1207,7 +1434,7 @@
                                 {
                                     "id": "token",
                                     "key": "token",
-                                    "value": "aut",
+                                    "value": "ipsam",
                                     "description": ""
                                 }
                             ]
@@ -1245,8 +1472,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/confirm-change-email\/aut could not be found.\"\n}",
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
                             "name": ""
                         }
                     ]
@@ -1273,7 +1500,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"ilind@example.net\"}"
+                            "raw": "{\"email\":\"quam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1304,7 +1531,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"et\"}"
+                            "raw": "{\"username\":\"accusamus\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1335,7 +1562,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"otp\":\"cupiditate\",\"email\":\"ricky33@example.net\",\"password\":\">L;YM'#x6o)K${.\"}"
+                            "raw": "{\"otp\":\"hjvc\",\"email\":\"jkunde@example.net\",\"password\":\"]zaA\\\"6Ni!gp\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1366,7 +1593,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"voluptatem\",\"type_id\":\"sequi\"}"
+                            "raw": "{\"type\":\"earum\",\"type_id\":\"voluptas\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1374,6 +1601,62 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "GET api\/sms\/{number}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/sms\/:number",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/sms\/:number",
+                            "variable": [
+                                {
+                                    "id": "number",
+                                    "key": "number",
+                                    "value": "laudantium",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-type",
+                                    "value": "text\/html; charset=UTF-8"
+                                },
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         }

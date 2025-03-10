@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CentralController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ExchangeRateController;
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\SavedRecipientController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +27,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('users', UserController::class);
     Route::post('/upload_documents', [UserController::class, 'uploadDocuments']);
     Route::put('/users/{id}/notifications', [UserController::class, 'updateNotificationPreferences']);
+    Route::get('/users/{id}/notifications', [NotificationController::class, 'updateNotificationPreferences']);
     Route::put('/users/{id}/account-details', [UserController::class, 'updateAccountDetails']);
 
     Route::apiResource('customers', CustomerController::class);
@@ -35,10 +38,15 @@ Route::middleware('auth:sanctum')->group(function () {
     // Exchange Rates
     Route::apiResource('exchange-rates', ExchangeRateController::class);
 
-    
-    
+    Route::prefix('saved-recipients')->group(function () {
+        Route::get('/', [SavedRecipientController::class, 'index']);
+        Route::get('/{id}', [SavedRecipientController::class, 'show']);
+        Route::delete('/{id}', [SavedRecipientController::class, 'destroy']);
+    });
     
 });
+
+Route::get('/exchange_rates/{currencyCode}', [ExchangeRateController::class, 'getRatesByCurrency']);
 Route::post('/resend_phone_number_verification', [CentralController::class, 'resendPhoneNumberVerification']);
 Route::post('/confirm_phone_number_verification', [CentralController::class, 'confirmPhoneNumberVerification']);
 Route::post('/verify_email', [CentralController::class, 'verifyEmail']); 

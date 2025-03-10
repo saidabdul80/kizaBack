@@ -11,7 +11,8 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('currency_id_from')->constrained('currencies')->cascadeOnDelete();
             $table->foreignId('currency_id_to')->constrained('currencies')->cascadeOnDelete();
-            $table->decimal('rate', 10, 4);
+            $table->decimal('rate', 10, 6);
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
             $table->unique(['currency_id_from', 'currency_id_to']);
         });
