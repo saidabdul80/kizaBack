@@ -11,9 +11,12 @@ class SavedRecipientController extends Controller
     /**
      * Display a listing of the saved recipients.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json(SavedRecipient::all(), Response::HTTP_OK);
+        $user = $request->user();
+        $filters = $request->all();
+        $filters['customerId'] = $user->id;
+        return response()->json(SavedRecipient::filter($filters)->paginate(15), 200);
     }
 
     /**

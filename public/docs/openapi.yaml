@@ -26,27 +26,27 @@ paths:
                 first_name:
                   type: string
                   description: 'Must be at least 3 characters.'
-                  example: tbzzelykewqcvdgslbewzqwvkp
+                  example: vxfuttinhppctnrfcbszkufgfzolnvvxrxlgovreragvnapkslercrnkwdxvvvfcjphtwgbdjjejqndjkt
                   nullable: false
                 last_name:
                   type: string
                   description: 'Must be at least 3 characters.'
-                  example: yqlcdzlrzuci
+                  example: bwfiqzqzazqkqsvcrnpnxxgeaalwjwmdnkzregbctcjwwvtr
                   nullable: false
                 phone_number:
                   type: string
                   description: ''
-                  example: illum
+                  example: commodi
                   nullable: false
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: sonny82@example.com
+                  example: jackeline.pollich@example.org
                   nullable: false
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: LCU6ns4
+                  example: Nd@i_c4U.>
                   nullable: false
               required:
                 - first_name
@@ -74,12 +74,12 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: dereck34@example.org
+                  example: becker.russell@example.org
                   nullable: false
                 password:
                   type: string
                   description: ''
-                  example: distinctio
+                  example: doloremque
                   nullable: false
               required:
                 - email
@@ -197,27 +197,27 @@ paths:
                 first_name:
                   type: string
                   description: ''
-                  example: odit
+                  example: quia
                   nullable: false
                 last_name:
                   type: string
                   description: ''
-                  example: rerum
+                  example: cumque
                   nullable: false
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: freddie.anderson@example.net
+                  example: caitlyn46@example.com
                   nullable: false
                 phone_number:
                   type: string
                   description: ''
-                  example: aut
+                  example: ea
                   nullable: false
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: '^]6KsJ8?IGRP#yU`H'
+                  example: +@W7SCAyzJ
                   nullable: false
               required:
                 - first_name
@@ -266,12 +266,12 @@ paths:
                 first_name:
                   type: string
                   description: ''
-                  example: non
+                  example: aperiam
                   nullable: false
                 last_name:
                   type: string
                   description: ''
-                  example: esse
+                  example: repellendus
                   nullable: false
                 email:
                   type: string
@@ -286,7 +286,7 @@ paths:
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: "7fFJ5U<'5:.lJZ"
+                  example: 'P`p.6O:Q&f^&lC_:'
                   nullable: false
               required:
                 - first_name
@@ -307,7 +307,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: et
+        example: odit
         required: true
         schema:
           type: string
@@ -335,7 +335,7 @@ paths:
                 id:
                   type: string
                   description: 'The <code>id</code> of an existing record in the users table.'
-                  example: voluptatem
+                  example: ex
                   nullable: false
                 type:
                   type: string
@@ -374,17 +374,17 @@ paths:
                 notify_security_alerts:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                   nullable: false
                 notify_ajo_alerts:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                   nullable: false
                 notify_product_announcements:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                   nullable: false
                 notify_support_tickets:
                   type: boolean
@@ -397,7 +397,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: veniam
+        example: qui
         required: true
         schema:
           type: string
@@ -420,17 +420,17 @@ paths:
                 account_number:
                   type: string
                   description: ''
-                  example: nemo
+                  example: ut
                   nullable: true
                 bank_name:
                   type: string
                   description: ''
-                  example: ipsam
+                  example: nostrum
                   nullable: true
                 account_name:
                   type: string
                   description: ''
-                  example: et
+                  example: soluta
                   nullable: true
       security: []
     parameters:
@@ -438,7 +438,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: molestiae
+        example: velit
         required: true
         schema:
           type: string
@@ -526,7 +526,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the customer.'
-        example: at
+        example: laudantium
         required: true
         schema:
           type: string
@@ -570,22 +570,22 @@ paths:
                 customer_id:
                   type: string
                   description: 'The <code>id</code> of an existing record in the customers table.'
-                  example: sint
+                  example: maxime
                   nullable: false
                 amount:
                   type: number
                   description: 'Must be at least 0.01.'
-                  example: 12
+                  example: 76
                   nullable: false
                 currency_id_from:
                   type: string
                   description: 'The <code>id</code> of an existing record in the currencies table.'
-                  example: voluptate
+                  example: dicta
                   nullable: false
                 currency_id_to:
                   type: string
                   description: 'The <code>id</code> of an existing record in the currencies table.'
-                  example: pariatur
+                  example: voluptatem
                   nullable: false
                 type:
                   type: string
@@ -598,7 +598,7 @@ paths:
                 fees:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 8
+                  example: 77
                   nullable: false
                 processed_by:
                   type: string
@@ -608,12 +608,12 @@ paths:
                 reference:
                   type: string
                   description: ''
-                  example: et
+                  example: reiciendis
                   nullable: false
                 save_recipient:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                   nullable: true
                 recipient:
                   type: object
@@ -624,37 +624,37 @@ paths:
                     first_name:
                       type: string
                       description: 'Must not be greater than 255 characters.'
-                      example: kacslodujripwoztbpz
+                      example: ancmivshgw
                       nullable: false
                     last_name:
                       type: string
                       description: 'Must not be greater than 255 characters.'
-                      example: jdlvzuqhzfwvplyvwjrlkemb
+                      example: uvinkxnfemxkr
                       nullable: true
                     phone_number:
                       type: string
                       description: 'Must not be greater than 15 characters.'
-                      example: zhyqdnqnxec
+                      example: sgodmnptxkrnnd
                       nullable: false
                     email:
                       type: string
                       description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                      example: orn.lesley@example.net
+                      example: laney.west@example.net
                       nullable: true
                     bank_name:
                       type: string
                       description: 'Must not be greater than 255 characters.'
-                      example: wieyjizj
+                      example: wnuvjfpzcsaiefejlke
                       nullable: false
                     account_name:
                       type: string
                       description: 'Must not be greater than 255 characters.'
-                      example: bfueq
+                      example: u
                       nullable: false
                     account_number:
                       type: string
                       description: 'Must not be greater than 50 characters.'
-                      example: dqmphfkvvefsnnkqfquubm
+                      example: qbfsknnmazpqdttie
                       nullable: false
               required:
                 - customer_id
@@ -706,7 +706,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: processing
+                  example: completed
                   nullable: false
                   enum:
                     - initiated
@@ -730,109 +730,10 @@ paths:
         in: path
         name: id
         description: 'The ID of the transaction.'
-        example: commodi
+        example: repellat
         required: true
         schema:
           type: string
-  /api/exchange-rates:
-    get:
-      summary: ''
-      operationId: getApiExchangeRates
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-    post:
-      summary: ''
-      operationId: postApiExchangeRates
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                currency_id_from:
-                  type: string
-                  description: 'The <code>id</code> of an existing record in the currencies table.'
-                  example: et
-                  nullable: false
-                currency_id_to:
-                  type: string
-                  description: 'The <code>id</code> of an existing record in the currencies table.'
-                  example: iure
-                  nullable: false
-                rate:
-                  type: number
-                  description: ''
-                  example: 0.9
-                  nullable: false
-              required:
-                - currency_id_from
-                - currency_id_to
-                - rate
-      security: []
-  '/api/exchange-rates/{id}':
-    put:
-      summary: ''
-      operationId: putApiExchangeRatesId
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                rate:
-                  type: number
-                  description: ''
-                  example: 3.63085047
-                  nullable: false
-              required:
-                - rate
-      security: []
-    delete:
-      summary: ''
-      operationId: deleteApiExchangeRatesId
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the exchange rate.'
-        example: 1
-        required: true
-        schema:
-          type: integer
   /api/saved-recipients:
     get:
       summary: 'Display a listing of the saved recipients.'
@@ -891,10 +792,250 @@ paths:
         in: path
         name: id
         description: 'The ID of the saved recipient.'
-        example: consectetur
+        example: animi
         required: true
         schema:
           type: string
+  /api/exchange-rates:
+    get:
+      summary: ''
+      operationId: getApiExchangeRates
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: 1
+                    currency_id_from: 1
+                    currency_id_to: 2
+                    rate: '1300.500000'
+                    is_active: true
+                    created_at: '2025-03-10T09:53:45.000000Z'
+                    updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_from:
+                      id: 1
+                      code: USD
+                      name: 'US Dollar'
+                      symbol: $
+                      flag: 'https://flagcdn.com/us.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_to:
+                      id: 2
+                      code: NGN
+                      name: 'Nigerian Naira'
+                      symbol: ₦
+                      flag: 'https://flagcdn.com/ng.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                  -
+                    id: 2
+                    currency_id_from: 2
+                    currency_id_to: 1
+                    rate: '0.000770'
+                    is_active: true
+                    created_at: '2025-03-10T09:53:45.000000Z'
+                    updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_from:
+                      id: 2
+                      code: NGN
+                      name: 'Nigerian Naira'
+                      symbol: ₦
+                      flag: 'https://flagcdn.com/ng.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_to:
+                      id: 1
+                      code: USD
+                      name: 'US Dollar'
+                      symbol: $
+                      flag: 'https://flagcdn.com/us.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                  -
+                    id: 3
+                    currency_id_from: 3
+                    currency_id_to: 2
+                    rate: '1400.750000'
+                    is_active: true
+                    created_at: '2025-03-10T09:53:45.000000Z'
+                    updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_from:
+                      id: 3
+                      code: EUR
+                      name: Euro
+                      symbol: €
+                      flag: 'https://flagcdn.com/eu.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_to:
+                      id: 2
+                      code: NGN
+                      name: 'Nigerian Naira'
+                      symbol: ₦
+                      flag: 'https://flagcdn.com/ng.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                  -
+                    id: 4
+                    currency_id_from: 2
+                    currency_id_to: 3
+                    rate: '0.000710'
+                    is_active: true
+                    created_at: '2025-03-10T09:53:45.000000Z'
+                    updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_from:
+                      id: 2
+                      code: NGN
+                      name: 'Nigerian Naira'
+                      symbol: ₦
+                      flag: 'https://flagcdn.com/ng.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_to:
+                      id: 3
+                      code: EUR
+                      name: Euro
+                      symbol: €
+                      flag: 'https://flagcdn.com/eu.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                  -
+                    id: 5
+                    currency_id_from: 4
+                    currency_id_to: 2
+                    rate: '950.300000'
+                    is_active: true
+                    created_at: '2025-03-10T09:53:45.000000Z'
+                    updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_from:
+                      id: 4
+                      code: CAD
+                      name: 'Canadian Dollar'
+                      symbol: C$
+                      flag: 'https://flagcdn.com/ca.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_to:
+                      id: 2
+                      code: NGN
+                      name: 'Nigerian Naira'
+                      symbol: ₦
+                      flag: 'https://flagcdn.com/ng.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                  -
+                    id: 6
+                    currency_id_from: 2
+                    currency_id_to: 4
+                    rate: '0.001050'
+                    is_active: true
+                    created_at: '2025-03-10T09:53:45.000000Z'
+                    updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_from:
+                      id: 2
+                      code: NGN
+                      name: 'Nigerian Naira'
+                      symbol: ₦
+                      flag: 'https://flagcdn.com/ng.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_to:
+                      id: 4
+                      code: CAD
+                      name: 'Canadian Dollar'
+                      symbol: C$
+                      flag: 'https://flagcdn.com/ca.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiExchangeRates
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                currency_id_from:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the currencies table.'
+                  example: ducimus
+                  nullable: false
+                currency_id_to:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the currencies table.'
+                  example: asperiores
+                  nullable: false
+                rate:
+                  type: number
+                  description: ''
+                  example: 133160.70497452
+                  nullable: false
+              required:
+                - currency_id_from
+                - currency_id_to
+                - rate
+      security: []
+  '/api/exchange-rates/{id}':
+    put:
+      summary: ''
+      operationId: putApiExchangeRatesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                rate:
+                  type: number
+                  description: ''
+                  example: 290335238.17
+                  nullable: false
+              required:
+                - rate
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiExchangeRatesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the exchange rate.'
+        example: 1
+        required: true
+        schema:
+          type: integer
   '/api/exchange_rates/{currencyCode}':
     get:
       summary: ''
@@ -945,7 +1086,7 @@ paths:
                 phone_number:
                   type: string
                   description: 'The <code>phone_number</code> of an existing record in the users table. Must be at least 10 characters.'
-                  example: rqlcnuosbdxqshqopeeovnln
+                  example: fffeieilycxtltxljnszwccptksvklx
                   nullable: false
               required:
                 - phone_number
@@ -969,12 +1110,12 @@ paths:
                 phone_number:
                   type: string
                   description: 'The <code>phone_number</code> of an existing record in the customers table.'
-                  example: aliquam
+                  example: ducimus
                   nullable: false
                 otp:
                   type: string
                   description: ''
-                  example: aut
+                  example: eum
                   nullable: false
               required:
                 - phone_number
@@ -999,12 +1140,12 @@ paths:
                 email:
                   type: string
                   description: 'The <code>email</code> of an existing record in the customers table.'
-                  example: dhills@example.org
+                  example: reilly.jarrod@example.org
                   nullable: false
                 otp:
                   type: string
                   description: 'The <code>email_otp</code> of an existing record in the customers table.'
-                  example: est
+                  example: soluta
                   nullable: false
               required:
                 - email
@@ -1037,7 +1178,7 @@ paths:
         in: path
         name: token
         description: ''
-        example: ipsam
+        example: omnis
         required: true
         schema:
           type: string
@@ -1060,7 +1201,7 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: quam
+                  example: ut
                   nullable: false
               required:
                 - email
@@ -1084,7 +1225,7 @@ paths:
                 username:
                   type: string
                   description: ''
-                  example: accusamus
+                  example: id
                   nullable: false
                 user_type:
                   type: string
@@ -1113,17 +1254,17 @@ paths:
                 otp:
                   type: string
                   description: 'Must not be greater than 6 characters.'
-                  example: hjvc
+                  example: syl
                   nullable: false
                 email:
                   type: string
                   description: 'Assuming OTP is a 6-character string. Must be a valid email address.'
-                  example: jkunde@example.net
+                  example: pdoyle@example.com
                   nullable: false
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: ']zaA"6Ni!gp'
+                  example: (7|XP_t>
                   nullable: false
               required:
                 - otp
@@ -1149,12 +1290,12 @@ paths:
                 type:
                   type: string
                   description: ''
-                  example: earum
+                  example: sed
                   nullable: false
                 type_id:
                   type: string
                   description: ''
-                  example: voluptas
+                  example: ex
                   nullable: false
               required:
                 - type
@@ -1182,7 +1323,7 @@ paths:
         in: path
         name: number
         description: ''
-        example: laudantium
+        example: est
         required: true
         schema:
           type: string

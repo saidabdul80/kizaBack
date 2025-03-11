@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "KIZA",
-        "_postman_id": "d6769851-5fd5-4bad-acdf-c35e50861a39",
+        "_postman_id": "114e4457-1059-4708-a3e8-c7b211efe072",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"tbzzelykewqcvdgslbewzqwvkp\",\"last_name\":\"yqlcdzlrzuci\",\"phone_number\":\"illum\",\"email\":\"sonny82@example.com\",\"password\":\"LCU6ns4\"}"
+                            "raw": "{\"first_name\":\"vxfuttinhppctnrfcbszkufgfzolnvvxrxlgovreragvnapkslercrnkwdxvvvfcjphtwgbdjjejqndjkt\",\"last_name\":\"bwfiqzqzazqkqsvcrnpnxxgeaalwjwmdnkzregbctcjwwvtr\",\"phone_number\":\"commodi\",\"email\":\"jackeline.pollich@example.org\",\"password\":\"Nd@i_c4U.>\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"dereck34@example.org\",\"password\":\"distinctio\"}"
+                            "raw": "{\"email\":\"becker.russell@example.org\",\"password\":\"doloremque\"}"
                         },
                         "description": "",
                         "auth": {
@@ -323,7 +323,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"odit\",\"last_name\":\"rerum\",\"email\":\"freddie.anderson@example.net\",\"phone_number\":\"aut\",\"password\":\"^]6KsJ8?IGRP#yU`H\"}"
+                            "raw": "{\"first_name\":\"quia\",\"last_name\":\"cumque\",\"email\":\"caitlyn46@example.com\",\"phone_number\":\"ea\",\"password\":\"+@W7SCAyzJ\"}"
                         },
                         "description": "",
                         "auth": {
@@ -344,7 +344,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "odit",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -400,7 +400,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "nesciunt",
+                                    "value": "cupiditate",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -418,7 +418,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"non\",\"last_name\":\"esse\",\"password\":\"7fFJ5U<'5:.lJZ\"}"
+                            "raw": "{\"first_name\":\"aperiam\",\"last_name\":\"repellendus\",\"password\":\"P`p.6O:Q&f^&lC_:\"}"
                         },
                         "description": "",
                         "auth": {
@@ -439,7 +439,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aliquid",
+                                    "value": "magnam",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -488,7 +488,7 @@
                             "formdata": [
                                 {
                                     "key": "id",
-                                    "value": "voluptatem",
+                                    "value": "ex",
                                     "type": "text",
                                     "description": "The <code>id<\/code> of an existing record in the users table."
                                 },
@@ -524,7 +524,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "veniam",
+                                    "value": "qui",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -542,7 +542,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"notify_security_alerts\":true,\"notify_ajo_alerts\":true,\"notify_product_announcements\":true,\"notify_support_tickets\":true}"
+                            "raw": "{\"notify_security_alerts\":false,\"notify_ajo_alerts\":false,\"notify_product_announcements\":false,\"notify_support_tickets\":true}"
                         },
                         "description": "",
                         "auth": {
@@ -563,7 +563,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "molestiae",
+                                    "value": "velit",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -581,7 +581,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"account_number\":\"nemo\",\"bank_name\":\"ipsam\",\"account_name\":\"et\"}"
+                            "raw": "{\"account_number\":\"ut\",\"bank_name\":\"nostrum\",\"account_name\":\"soluta\"}"
                         },
                         "description": "",
                         "auth": {
@@ -650,7 +650,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "at",
+                                    "value": "laudantium",
                                     "description": "The ID of the customer."
                                 }
                             ]
@@ -706,7 +706,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "15",
                                     "description": "The ID of the customer."
                                 }
                             ]
@@ -745,7 +745,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "4",
+                                    "value": "6",
                                     "description": "The ID of the customer."
                                 }
                             ]
@@ -839,7 +839,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"customer_id\":\"sint\",\"amount\":12,\"currency_id_from\":\"voluptate\",\"currency_id_to\":\"pariatur\",\"type\":\"send\",\"fees\":8,\"reference\":\"et\",\"save_recipient\":true,\"recipient\":{\"first_name\":\"kacslodujripwoztbpz\",\"last_name\":\"jdlvzuqhzfwvplyvwjrlkemb\",\"phone_number\":\"zhyqdnqnxec\",\"email\":\"orn.lesley@example.net\",\"bank_name\":\"wieyjizj\",\"account_name\":\"bfueq\",\"account_number\":\"dqmphfkvvefsnnkqfquubm\"}}"
+                            "raw": "{\"customer_id\":\"maxime\",\"amount\":76,\"currency_id_from\":\"dicta\",\"currency_id_to\":\"voluptatem\",\"type\":\"send\",\"fees\":77,\"reference\":\"reiciendis\",\"save_recipient\":false,\"recipient\":{\"first_name\":\"ancmivshgw\",\"last_name\":\"uvinkxnfemxkr\",\"phone_number\":\"sgodmnptxkrnnd\",\"email\":\"laney.west@example.net\",\"bank_name\":\"wnuvjfpzcsaiefejlke\",\"account_name\":\"u\",\"account_number\":\"qbfsknnmazpqdttie\"}}"
                         },
                         "description": "",
                         "auth": {
@@ -860,7 +860,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "commodi",
+                                    "value": "repellat",
                                     "description": "The ID of the transaction."
                                 }
                             ]
@@ -916,7 +916,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "19",
+                                    "value": "8",
                                     "description": "The ID of the transaction."
                                 }
                             ]
@@ -934,7 +934,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"status\":\"processing\"}"
+                            "raw": "{\"status\":\"completed\"}"
                         },
                         "description": "",
                         "auth": {
@@ -955,162 +955,8 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "13",
+                                    "value": "14",
                                     "description": "The ID of the transaction."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "GET api\/exchange-rates",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/exchange-rates",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/exchange-rates"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "POST api\/exchange-rates",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/exchange-rates",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/exchange-rates"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"currency_id_from\":\"et\",\"currency_id_to\":\"iure\",\"rate\":0.9}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "PUT api\/exchange-rates\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/exchange-rates\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/exchange-rates\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the exchange rate."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"rate\":3.63085047}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "DELETE api\/exchange-rates\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/exchange-rates\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/exchange-rates\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the exchange rate."
                                 }
                             ]
                         },
@@ -1193,7 +1039,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "consectetur",
+                                    "value": "animi",
                                     "description": "The ID of the saved recipient."
                                 }
                             ]
@@ -1249,8 +1095,162 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "earum",
+                                    "value": "voluptatem",
                                     "description": "The ID of the saved recipient."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/exchange-rates",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/exchange-rates",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/exchange-rates"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "[{\"id\":1,\"currency_id_from\":1,\"currency_id_to\":2,\"rate\":\"1300.500000\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":1,\"code\":\"USD\",\"name\":\"US Dollar\",\"symbol\":\"$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/us.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":2,\"currency_id_from\":2,\"currency_id_to\":1,\"rate\":\"0.000770\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":1,\"code\":\"USD\",\"name\":\"US Dollar\",\"symbol\":\"$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/us.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":3,\"currency_id_from\":3,\"currency_id_to\":2,\"rate\":\"1400.750000\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":3,\"code\":\"EUR\",\"name\":\"Euro\",\"symbol\":\"\\u20ac\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/eu.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":4,\"currency_id_from\":2,\"currency_id_to\":3,\"rate\":\"0.000710\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":3,\"code\":\"EUR\",\"name\":\"Euro\",\"symbol\":\"\\u20ac\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/eu.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":5,\"currency_id_from\":4,\"currency_id_to\":2,\"rate\":\"950.300000\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":4,\"code\":\"CAD\",\"name\":\"Canadian Dollar\",\"symbol\":\"C$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ca.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":6,\"currency_id_from\":2,\"currency_id_to\":4,\"rate\":\"0.001050\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":4,\"code\":\"CAD\",\"name\":\"Canadian Dollar\",\"symbol\":\"C$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ca.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}}]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/exchange-rates",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/exchange-rates",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/exchange-rates"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"currency_id_from\":\"ducimus\",\"currency_id_to\":\"asperiores\",\"rate\":133160.70497452}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api\/exchange-rates\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/exchange-rates\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/exchange-rates\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the exchange rate."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"rate\":290335238.17}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/exchange-rates\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/exchange-rates\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/exchange-rates\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the exchange rate."
                                 }
                             ]
                         },
@@ -1351,7 +1351,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone_number\":\"rqlcnuosbdxqshqopeeovnln\"}"
+                            "raw": "{\"phone_number\":\"fffeieilycxtltxljnszwccptksvklx\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1382,7 +1382,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone_number\":\"aliquam\",\"otp\":\"aut\"}"
+                            "raw": "{\"phone_number\":\"ducimus\",\"otp\":\"eum\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1413,7 +1413,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"dhills@example.org\",\"otp\":\"est\"}"
+                            "raw": "{\"email\":\"reilly.jarrod@example.org\",\"otp\":\"soluta\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1434,7 +1434,7 @@
                                 {
                                     "id": "token",
                                     "key": "token",
-                                    "value": "ipsam",
+                                    "value": "omnis",
                                     "description": ""
                                 }
                             ]
@@ -1500,7 +1500,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"quam\"}"
+                            "raw": "{\"email\":\"ut\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1531,7 +1531,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"accusamus\"}"
+                            "raw": "{\"username\":\"id\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1562,7 +1562,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"otp\":\"hjvc\",\"email\":\"jkunde@example.net\",\"password\":\"]zaA\\\"6Ni!gp\"}"
+                            "raw": "{\"otp\":\"syl\",\"email\":\"pdoyle@example.com\",\"password\":\"(7|XP_t>\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1593,7 +1593,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"earum\",\"type_id\":\"voluptas\"}"
+                            "raw": "{\"type\":\"sed\",\"type_id\":\"ex\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1614,7 +1614,7 @@
                                 {
                                     "id": "number",
                                     "key": "number",
-                                    "value": "laudantium",
+                                    "value": "est",
                                     "description": ""
                                 }
                             ]

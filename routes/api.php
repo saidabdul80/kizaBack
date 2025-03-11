@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 // Public routes
 Route::post('register', [AuthController::class, 'registerCustomer']);
 Route::post('login', [AuthController::class, 'loginCustomer']);
-Route::get('login', fn() => response()->json(['message' => 'Login is not allowed for public routes']));
+Route::get('login', fn() => response()->json(['message' => 'Login is not allowed for public routes']))->name('login');
 Route::post('/admin/login', [AuthController::class, 'loginAdmin']);
 
 Route::get('unauth_bootstrap', [AuthController::class, 'unme']);
@@ -36,8 +36,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('transactions', TransactionController::class);
 
     // Exchange Rates
-    Route::apiResource('exchange-rates', ExchangeRateController::class);
-
     Route::prefix('saved-recipients')->group(function () {
         Route::get('/', [SavedRecipientController::class, 'index']);
         Route::get('/{id}', [SavedRecipientController::class, 'show']);
@@ -45,6 +43,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
     
 });
+Route::apiResource('exchange-rates', ExchangeRateController::class);
 
 Route::get('/exchange_rates/{currencyCode}', [ExchangeRateController::class, 'getRatesByCurrency']);
 Route::post('/resend_phone_number_verification', [CentralController::class, 'resendPhoneNumberVerification']);
