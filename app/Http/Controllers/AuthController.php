@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\UserResource;
+use App\Http\Resources\CustomerResource;
 use App\Jobs\QueueMail;
 use App\Mail\SendMailNoQueue;
 use App\Models\Customer;
@@ -67,7 +67,7 @@ class AuthController extends Controller
 
     public function me(Request $request)
     {
-        return response()->json(["user"=>new UserResource($request->user())]);
+        return response()->json(["user"=>new CustomerResource($request->user())]);
     }
 
     public function unme(Request $request)
