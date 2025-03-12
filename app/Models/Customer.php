@@ -29,7 +29,10 @@ class Customer extends  Authenticatable
         'phone_number_otp', 
         'phone_number_verified_at',
         'password',
-        'phone_number_otp_expires_at'
+        'phone_number_otp_expires_at',
+        'pending_email',
+        'pending_phone_number',
+        'email_otp_expires_at'
     ];
 
     protected $hidden = ['password', 'phone_number_otp', 'email_otp' ];

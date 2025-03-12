@@ -101,7 +101,8 @@ class AuthController extends Controller
             $customer->update([
                 'email_otp' => $mailCode,
                 'phone_number_otp' => $code,
-                'phone_number_otp_expires_at' => $expired_at
+                'phone_number_otp_expires_at' => $expired_at,
+                'email_otp_expires_at' => $expired_at
             ]);
         
             Util::sendSMS($customer->phone_number, 'Your OTP code is ' . $code . ' and expires in 10 minutes.', 'single');

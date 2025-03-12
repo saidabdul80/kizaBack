@@ -491,20 +491,22 @@ class CentralController extends Controller
     
         // Find the user with the provided token and email, and ensure the token is not expired
         $user = Customer::where('email_otp', $token)
-            ->where('email', $email)
-            ->where('phone_number_otp_expires_at', '>=', now())
+            ->where(function($query) use($email){
+                $query->where('email', $email)->orWhere('pending_email', $email);
+            })
+            ->where('email_otp_expires_at', '>=', now())
             ->first();
             if(!$user){
                 return response()->json(['message' => 'Invalid Expired OTP'], 400);
             }
             // Update user to mark the email as verified
             $user->email_otp = null;
-            $user->phone_number_otp_expires_at = null;
+            $user->email_otp_expires_at = null;
             $user->email_verified_at = now();
             $user->save();
     
             // Dispatch the email verified event
-            Mail::to($user->email)->send(new SendMailNoQueue('account_created','Kiza Email Verification', [
+            Mail::to($user->email)->send(new SendMailNoQueue('account_created','Kiza Email Verified', [
                 'full_name' => $user->first_name . ' ' . $user->last_name
 
             ]));
@@ -544,11 +546,11 @@ class CentralController extends Controller
             'phone_number' => 'required|string|exists:customers,phone_number',
             'otp' => 'required|string',
         ]);
-
-        $customer = Customer::where([
-            'phone_number'=>$request->phone_number,
-            'phone_number_otp'=>$request->otp,
-            ])->where('phone_number_otp_expires_at','>',now())->first();
+        $phone_number = $request->phone_number;
+        $customer = Customer::where('phone_number_otp',$request->otp)
+            ->where(function($query) use($phone_number){
+                $query->where('email', $phone_number)->orWhere('pending_email', $phone_number);
+            })->where('phone_number_otp_expires_at','>',now())->first();
 
         if(!$customer){
             return response()->json(['message' => 'Invalid phone number. or expired OTP.'], 400);
