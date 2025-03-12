@@ -12,7 +12,10 @@ class Customer extends  Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
-        'first_name', 'last_name', 'phone_number', 'email', 
+        'first_name', 
+        'last_name', 
+        'phone_number', 
+        'email', 
         'bank_account_details',
         'picture_url',
         'nin_slip_url',

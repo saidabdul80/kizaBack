@@ -67,7 +67,7 @@ class AuthController extends Controller
 
     public function me(Request $request)
     {
-        return response()->json(["user"=>new CustomerResource($request->user())]);
+        return response()->json(["customer"=>new CustomerResource($request->user())]);
     }
 
     public function unme(Request $request)
@@ -114,7 +114,7 @@ class AuthController extends Controller
             DB::commit();
             return response()->json([
                 'token' => $customer->createToken('customer_token')->plainTextToken,
-                'customer' => $customer
+                'customer' =>  new CustomerResource($customer)
             ]);
         }catch(\Exception $e){
             DB::rollBack();
@@ -139,7 +139,7 @@ class AuthController extends Controller
 
         return response()->json([
             'access_token' => $customer->createToken('customer_token')->plainTextToken,
-            'customer' => $customer
+            'customer' => new CustomerResource($customer)
         ]);
     }
 }

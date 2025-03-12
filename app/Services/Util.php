@@ -485,7 +485,7 @@ class Util
         $totalPendingAmount = $pendingPeriods * $ajo->amount;
     
         if ($userWallet->balance < $ajo->amount) {
-            return "Insufficient funds for even one contribution.";
+            return "Insufficient funds";
         }
     
         // Calculate max contributions based on available balance
