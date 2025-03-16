@@ -10,7 +10,7 @@ class Transaction extends Model
 
     protected $fillable = [
         'customer_id', 'amount', 'currency_id_from', 'currency_id_to',
-        'recipient_id', 'recipients', 'type', 'rate', 'fees', 'status', 
+        'recipient_id', 'recipients', 'type', 'rate', 'fees', 'status', 'method',
         'receipt_path', 'processed_by', 'reference', 'total_amount'
     ];
 

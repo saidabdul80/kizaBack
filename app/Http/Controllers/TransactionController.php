@@ -5,6 +5,7 @@ use App\Http\Resources\TransactionResource;
 use App\Models\ExchangeRate;
 use App\Models\SavedRecipient;
 use App\Models\Transaction;
+use App\Services\Util;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -23,19 +24,16 @@ class TransactionController extends Controller
             'amount'            => 'required|numeric|min:0.01',
             'currency_id_from'  => 'required|exists:currencies,id',
             'currency_id_to'    => 'required|exists:currencies,id',
-            'type'              => 'required|in:send,receive',
-            'fees'              => 'required|numeric|min:0',
-            'processed_by'      => 'nullable|exists:users,id',
-            'reference'         => 'required|string|unique:transactions,reference',
+            'method'            => 'required|in:mobile_money,bank_deposit',
             'save_recipient'    => 'nullable|boolean',
             'recipient'         => 'required|array',
             'recipient.first_name'  => 'required|string|max:255',
-            'recipient.last_name'   => 'nullable|string|max:255',
-            'recipient.phone_number'=> 'required|string|max:15',
+            'recipient.last_name'   => 'required|string|max:255',
+            'recipient.phone_number'=> 'nullable|string|max:15',
             'recipient.email'       => 'nullable|email|max:255',
-            'recipient.bank_name'   => 'required|string|max:255',
-            'recipient.account_name'=> 'required|string|max:255',
-            'recipient.account_number' => 'required|string|max:50',
+            'recipient.bank_name'   => 'nullable|string|max:255',
+            'recipient.account_name'=> 'nullable|string|max:255',
+            'recipient.account_number' => 'nullable|string|max:50',
         ]);
 
         // Get exchange rate from backend
@@ -58,8 +56,8 @@ class TransactionController extends Controller
                     'customer_id'   => $validated['customer_id'],
                     'first_name'   => $validated['first_name'],
                     'last_name'   => $validated['last_name'],
-                    'phone_number'  => $validated['recipient']['phone_number'],
-                    'account_number'=> $validated['recipient']['account_number'],
+                    'phone_number'  => $validated['recipient']['phone_number']??null,
+                    'account_number'=> $validated['recipient']['account_number']??null,
                 ],
                 $validated['recipient']
             );
@@ -72,6 +70,7 @@ class TransactionController extends Controller
             $validated['recipients'] = $validated['recipient'];
         }
 
+        $validated['reference'] = Util::generateReferenceCode();
         // Create Transaction
         $transaction = Transaction::create($validated);
 

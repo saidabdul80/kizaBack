@@ -542,10 +542,12 @@ class CentralController extends Controller
 
     public function confirmPhoneNumberVerification(Request $request)
     {
+        
         $request->validate([
             'phone_number' => 'required|string|exists:customers,phone_number',
             'otp' => 'required|string',
         ]);
+
         $phone_number = $request->phone_number;
         $customer = Customer::where('phone_number_otp',$request->otp)
             ->where(function($query) use($phone_number){
