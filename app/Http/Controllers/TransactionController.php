@@ -20,7 +20,6 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'customer_id'       => 'required|exists:customers,id',
             'amount'            => 'required|numeric|min:0.01',
             'currency_id_from'  => 'required|exists:currencies,id',
             'currency_id_to'    => 'required|exists:currencies,id',
@@ -53,7 +52,7 @@ class TransactionController extends Controller
             // Save recipient and set recipient_id
             $recipient = SavedRecipient::updateOrCreate(
                 [
-                    'customer_id'   => $validated['customer_id'],
+                    'customer_id'   => $request->user()->id,
                     'first_name'   => $validated['first_name'],
                     'last_name'   => $validated['last_name'],
                     'phone_number'  => $validated['recipient']['phone_number']??null,
