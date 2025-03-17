@@ -46,7 +46,7 @@ class TransactionController extends Controller
 
         // Calculate total amount using backend rate
         $validated['rate'] = $exchangeRate->rate;
-        $validated['total_amount'] = ($validated['amount'] * $exchangeRate->rate) - $validated['fees'];
+        $validated['total_amount'] = ($validated['amount'] * $exchangeRate->rate);// - $validated['fees'];
 
         if ($request->save_recipient) {
             // Save recipient and set recipient_id
