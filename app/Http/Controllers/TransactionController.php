@@ -48,6 +48,7 @@ class TransactionController extends Controller
         $validated['rate'] = $exchangeRate->rate;
         $validated['total_amount'] = ($validated['amount'] * $exchangeRate->rate);// - $validated['fees'];
         $validated['customer_id']   = $request->user()->id;
+        $validated['fees'] = 0;
         if ($request->save_recipient) {
             // Save recipient and set recipient_id
             $recipient = SavedRecipient::updateOrCreate(
