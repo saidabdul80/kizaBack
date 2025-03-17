@@ -35,7 +35,7 @@ class Customer extends  Authenticatable
         'email_otp_expires_at'
     ];
 
-    protected $hidden = ['password', 'phone_number_otp', 'email_otp' ];
+    protected $hidden = ['password', 'phone_number_otp', 'email_otp','email_otp_expires_at','phone_number_otp_expires_at'];
     protected $appends = ['full_name'];
     protected $casts = [
         'email_verified_at' => 'datetime',
