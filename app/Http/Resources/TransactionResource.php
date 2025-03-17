@@ -17,6 +17,8 @@ class TransactionResource extends JsonResource
             'id'            => $this->id,
             'customer'      => $this->customer,
             'amount'        => $this->amount,
+            'deposit_amount'=> $this->amount . $this->currencyFrom->code,
+            'recipient_receiving_amount' => $this->total_amount . $this->currencyTo->code,
             'currency_from' => $this->currencyFrom,
             'currency_to'   => $this->currencyTo,
             'recipient'     => $this->recipient_details, // Handles both saved and unsaved recipients

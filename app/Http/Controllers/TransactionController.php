@@ -74,7 +74,7 @@ class TransactionController extends Controller
         // Create Transaction
         $transaction = Transaction::create($validated);
 
-        return response()->json($transaction,200);
+        return response()->json(new TransactionResource($transaction),200);
     }
 
 
