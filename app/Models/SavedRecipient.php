@@ -9,7 +9,7 @@ class SavedRecipient extends Model
 {
     use HasFactory, Filterable;
 
-    protected $fillable = ['customer_id', 'first_name','last_name', 'phone_number','email', 'bank_name','account_name', 'account_number'];
+    protected $fillable = ['customer_id','method', 'first_name','last_name', 'phone_number','email', 'bank_name','account_name', 'account_number'];
 
     public function customer()
     {
