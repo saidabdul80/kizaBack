@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
 {
+
     public function index(Request $request)
     {
         $transactions = Transaction::filter([
@@ -130,7 +131,6 @@ class TransactionController extends Controller
         return new TransactionResource($transaction);
     }
     
-
     public function update(Request $request, Transaction $transaction)
     {
         $request->validate([
@@ -147,4 +147,5 @@ class TransactionController extends Controller
         $transaction->delete();
         return response()->json(['message' => 'Transaction deleted successfully']);
     }
+    
 }
