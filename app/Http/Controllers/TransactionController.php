@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Enums\Methods;
 use App\Http\Resources\TransactionResource;
 use App\Models\ExchangeRate;
 use App\Models\SavedRecipient;
@@ -54,25 +55,26 @@ class TransactionController extends Controller
         $validated['customer_id']   = $request->user()->id;
         $validated['fees'] = 0;
         $validated['type'] = 'send';
+        $validated['method'] = Methods::getValue(strtoupper($request->method));
         DB::beginTransaction();
         try{
             if ($request->save_recipient) {
                 $recipientData = ['customer_id' => $request->user()->id, 'method' => $validated['method']];
 
                 // Apply validation fields based on the method
-                if ($validated['method'] === 'mobile_money') {
+                if ($validated['method'] === Methods::MOBILE_MONEY) {
                     $recipientData += [
                         'first_name'   => $validated['recipient']['first_name'],
                         'last_name'    => $validated['recipient']['last_name'],
                         'phone_number' => $validated['recipient']['phone_number'],
                     ];
-                } elseif ($validated['method'] === 'bank_deposit') {
+                } elseif ($validated['method'] === Methods::BANK_DEPOSIT) {
                     $recipientData += [
                         'bank_name'     => $validated['recipient']['bank_name'],
                         'account_name'  => $validated['recipient']['account_name'],
                         'account_number'=> $validated['recipient']['account_number'],
                     ];
-                } elseif ($validated['method'] === 'cash_pick_up') {
+                } elseif ($validated['method'] === Methods::CASH_PICK_UP) {
                     $recipientData += [
                         'first_name' => $validated['recipient']['first_name'],
                         'last_name'  => $validated['recipient']['last_name'],
@@ -90,7 +92,7 @@ class TransactionController extends Controller
                     'method'      => $validated['method'],
                 ];
                 
-                if ($validated['method'] === 'mobile_money' || $validated['method'] === 'cash_pick_up') {
+                if ($validated['method'] === Methods::MOBILE_MONEY || $validated['method'] === Methods::CASH_PICK_UP) {
                     $conditions['phone_number'] = $validated['recipient']['phone_number'];
                 } elseif ($validated['method'] === 'bank_deposit') {
                     $conditions['account_number'] = $validated['recipient']['account_number'];
@@ -108,6 +110,7 @@ class TransactionController extends Controller
             }
 
             $validated['reference'] = Util::generateReferenceCode();
+         
             // Create Transaction
             $transaction = Transaction::create($validated);
             DB::commit();

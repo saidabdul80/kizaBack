@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum AjoStatus
+enum Status
 {
     const ACTIVE = 0;
     const INACTIVE = 1;

@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Resources;
 
+use App\Enums\Methods;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -25,6 +26,7 @@ class TransactionResource extends JsonResource
             'type'          => $this->type,
             'rate'          => $this->rate,
             'fees'          => $this->fees,
+            'method'        => Methods::getKey($this->method),
             'total_amount'  => $this->total_amount,
             'status'        => $this->status,
             'reference'     => $this->reference,
