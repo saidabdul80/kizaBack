@@ -56,8 +56,8 @@ class TransactionController extends Controller
             $recipient = SavedRecipient::updateOrCreate(
                 [
                     'customer_id'   => $request->user()->id,
-                    'first_name'   => $validated['first_name'],
-                    'last_name'   => $validated['last_name'],
+                    'first_name'   => $validated['recipient']['first_name'],
+                    'last_name'   => $validated['recipient']['last_name'],
                     'phone_number'  => $validated['recipient']['phone_number']??null,
                     'account_number'=> $validated['recipient']['account_number']??null,
                 ],
