@@ -12,12 +12,13 @@ use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $transactions = Transaction::with('customer', 'currencyFrom', 'currencyTo', 'recipient')->get();
+        $transactions = Transaction::filter([
+            'customer'   => $request->user()->id,
+        ])->with('customer', 'currencyFrom', 'currencyTo', 'recipient')->get();
         return TransactionResource::collection($transactions);
     }
-
 
     public function store(Request $request)
     {
@@ -121,10 +122,11 @@ class TransactionController extends Controller
         }
     }
 
-
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        $transaction = Transaction::with('customer', 'currencyFrom', 'currencyTo', 'recipient')->findOrFail($id);
+        $transaction = Transaction::filter([
+            'customer'   => $id,
+        ])->with('customer', 'currencyFrom', 'currencyTo', 'recipient')->findOrFail($id);
         return new TransactionResource($transaction);
     }
     
