@@ -7,6 +7,7 @@ use App\Models\SavedRecipient;
 use App\Models\Transaction;
 use App\Services\Util;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
 {
@@ -53,63 +54,68 @@ class TransactionController extends Controller
         $validated['customer_id']   = $request->user()->id;
         $validated['fees'] = 0;
         $validated['type'] = 'send';
+        DB::beginTransaction();
+        try{
+            if ($request->save_recipient) {
+                $recipientData = ['customer_id' => $request->user()->id, 'method' => $validated['method']];
 
-        if ($request->save_recipient) {
-            $recipientData = ['customer_id' => $request->user()->id, 'method' => $validated['method']];
+                // Apply validation fields based on the method
+                if ($validated['method'] === 'mobile_money') {
+                    $recipientData += [
+                        'first_name'   => $validated['recipient']['first_name'],
+                        'last_name'    => $validated['recipient']['last_name'],
+                        'phone_number' => $validated['recipient']['phone_number'],
+                    ];
+                } elseif ($validated['method'] === 'bank_deposit') {
+                    $recipientData += [
+                        'bank_name'     => $validated['recipient']['bank_name'],
+                        'account_name'  => $validated['recipient']['account_name'],
+                        'account_number'=> $validated['recipient']['account_number'],
+                    ];
+                } elseif ($validated['method'] === 'cash_pick_up') {
+                    $recipientData += [
+                        'first_name' => $validated['recipient']['first_name'],
+                        'last_name'  => $validated['recipient']['last_name'],
+                        'email'      => $validated['recipient']['email'] ?? null,
+                        'phone_number' => $validated['recipient']['phone_number'],
+                    ];
+                }
 
-            // Apply validation fields based on the method
-            if ($validated['method'] === 'mobile_money') {
-                $recipientData += [
-                    'first_name'   => $validated['recipient']['first_name'],
-                    'last_name'    => $validated['recipient']['last_name'],
-                    'phone_number' => $validated['recipient']['phone_number'],
+                // Remove null values
+                $recipientData = array_filter($recipientData, fn($value) => !is_null($value));
+
+                // Define unique criteria based on method
+                $conditions = [
+                    'customer_id' => $request->user()->id,
+                    'method'      => $validated['method'],
                 ];
-            } elseif ($validated['method'] === 'bank_deposit') {
-                $recipientData += [
-                    'bank_name'     => $validated['recipient']['bank_name'],
-                    'account_name'  => $validated['recipient']['account_name'],
-                    'account_number'=> $validated['recipient']['account_number'],
-                ];
-            } elseif ($validated['method'] === 'cash_pick_up') {
-                $recipientData += [
-                    'first_name' => $validated['recipient']['first_name'],
-                    'last_name'  => $validated['recipient']['last_name'],
-                    'email'      => $validated['recipient']['email'] ?? null,
-                    'phone_number' => $validated['recipient']['phone_number'],
-                ];
+                
+                if ($validated['method'] === 'mobile_money' || $validated['method'] === 'cash_pick_up') {
+                    $conditions['phone_number'] = $validated['recipient']['phone_number'];
+                } elseif ($validated['method'] === 'bank_deposit') {
+                    $conditions['account_number'] = $validated['recipient']['account_number'];
+                }
+
+                // Update or create recipient
+                $recipient = SavedRecipient::updateOrCreate($conditions, $recipientData);
+
+                $validated['recipient_id'] = $recipient->id;
+                $validated['recipients'] = null; // Use saved recipient
+            } else {
+                // Store recipient details as JSON
+                $validated['recipient_id'] = null;
+                $validated['recipients'] = $validated['recipient'];
             }
 
-            // Remove null values
-            $recipientData = array_filter($recipientData, fn($value) => !is_null($value));
-
-            // Define unique criteria based on method
-            $conditions = [
-                'customer_id' => $request->user()->id,
-                'method'      => $validated['method'],
-            ];
-            
-            if ($validated['method'] === 'mobile_money' || $validated['method'] === 'cash_pick_up') {
-                $conditions['phone_number'] = $validated['recipient']['phone_number'];
-            } elseif ($validated['method'] === 'bank_deposit') {
-                $conditions['account_number'] = $validated['recipient']['account_number'];
-            }
-
-            // Update or create recipient
-            $recipient = SavedRecipient::updateOrCreate($conditions, $recipientData);
-
-            $validated['recipient_id'] = $recipient->id;
-            $validated['recipients'] = null; // Use saved recipient
-        } else {
-            // Store recipient details as JSON
-            $validated['recipient_id'] = null;
-            $validated['recipients'] = $validated['recipient'];
+            $validated['reference'] = Util::generateReferenceCode();
+            // Create Transaction
+            $transaction = Transaction::create($validated);
+            DB::commit();
+            return response()->json(new TransactionResource($transaction),200);
+        }catch(\Exception $e){
+            DB::rollBack();
+            return response()->json(['message' => $e->getMessage()], 400);
         }
-
-        $validated['reference'] = Util::generateReferenceCode();
-        // Create Transaction
-        $transaction = Transaction::create($validated);
-
-        return response()->json(new TransactionResource($transaction),200);
     }
 
 
