@@ -23,17 +23,20 @@ class TransactionController extends Controller
             'amount'            => 'required|numeric|min:0.01',
             'currency_id_from'  => 'required|exists:currencies,id',
             'currency_id_to'    => 'required|exists:currencies,id',
-            'method'            => 'required|in:mobile_money,bank_deposit',
+            'method'            => 'required|in:mobile_money,bank_deposit,cash_pick_up',
             'save_recipient'    => 'nullable|boolean',
             'recipient'         => 'required|array',
-            'recipient.first_name'  => 'required|string|max:255',
-            'recipient.last_name'   => 'required|string|max:255',
-            'recipient.phone_number'=> 'nullable|string|max:15',
-            'recipient.email'       => 'nullable|email|max:255',
-            'recipient.bank_name'   => 'nullable|string|max:255',
-            'recipient.account_name'=> 'nullable|string|max:255',
-            'recipient.account_number' => 'nullable|string|max:50',
+    
+            // Common fields
+            'recipient.first_name'  => ['required_if:method,mobile_money,cash_pick_up', 'string', 'max:255'],
+            'recipient.last_name'   => ['required_if:method,mobile_money,cash_pick_up', 'string', 'max:255'],
+            'recipient.phone_number'=> ['required_if:method,mobile_money', 'nullable', 'string', 'max:15'],
+            'recipient.email'       => ['required_if:method,cash_pick_up', 'nullable', 'email', 'max:255'],
+            'recipient.bank_name'   => ['required_if:method,bank_deposit', 'nullable', 'string', 'max:255'],
+            'recipient.account_name'=> ['required_if:method,bank_deposit', 'nullable', 'string', 'max:255'],
+            'recipient.account_number' => ['required_if:method,bank_deposit', 'nullable', 'string', 'max:50'],
         ]);
+    
 
         // Get exchange rate from backend
         $exchangeRate = ExchangeRate::where('currency_id_from', $validated['currency_id_from'])
@@ -52,17 +55,47 @@ class TransactionController extends Controller
         $validated['type'] = 'send';
 
         if ($request->save_recipient) {
-            // Save recipient and set recipient_id
-            $recipient = SavedRecipient::updateOrCreate(
-                [
-                    'customer_id'   => $request->user()->id,
+            $recipientData = ['customer_id' => $request->user()->id, 'method' => $validated['method']];
+
+            // Apply validation fields based on the method
+            if ($validated['method'] === 'mobile_money') {
+                $recipientData += [
                     'first_name'   => $validated['recipient']['first_name'],
-                    'last_name'   => $validated['recipient']['last_name'],
-                    'phone_number'  => $validated['recipient']['phone_number']??null,
-                    'account_number'=> $validated['recipient']['account_number']??null,
-                ],
-                $validated['recipient']
-            );
+                    'last_name'    => $validated['recipient']['last_name'],
+                    'phone_number' => $validated['recipient']['phone_number'],
+                ];
+            } elseif ($validated['method'] === 'bank_deposit') {
+                $recipientData += [
+                    'bank_name'     => $validated['recipient']['bank_name'],
+                    'account_name'  => $validated['recipient']['account_name'],
+                    'account_number'=> $validated['recipient']['account_number'],
+                ];
+            } elseif ($validated['method'] === 'cash_pick_up') {
+                $recipientData += [
+                    'first_name' => $validated['recipient']['first_name'],
+                    'last_name'  => $validated['recipient']['last_name'],
+                    'email'      => $validated['recipient']['email'] ?? null,
+                    'phone_number' => $validated['recipient']['phone_number'],
+                ];
+            }
+
+            // Remove null values
+            $recipientData = array_filter($recipientData, fn($value) => !is_null($value));
+
+            // Define unique criteria based on method
+            $conditions = [
+                'customer_id' => $request->user()->id,
+                'method'      => $validated['method'],
+            ];
+            
+            if ($validated['method'] === 'mobile_money' || $validated['method'] === 'cash_pick_up') {
+                $conditions['phone_number'] = $validated['recipient']['phone_number'];
+            } elseif ($validated['method'] === 'bank_deposit') {
+                $conditions['account_number'] = $validated['recipient']['account_number'];
+            }
+
+            // Update or create recipient
+            $recipient = SavedRecipient::updateOrCreate($conditions, $recipientData);
 
             $validated['recipient_id'] = $recipient->id;
             $validated['recipients'] = null; // Use saved recipient
