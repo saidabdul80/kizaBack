@@ -16,6 +16,9 @@ class ExchangeRateSeeder extends Seeder
             ['code' => 'NGN', 'name' => 'Nigerian Naira', 'symbol' => '₦', 'flag' => 'https://flagcdn.com/ng.svg'],
             ['code' => 'EUR', 'name' => 'Euro', 'symbol' => '€', 'flag' => 'https://flagcdn.com/eu.svg'],
             ['code' => 'CAD', 'name' => 'Canadian Dollar', 'symbol' => 'C$', 'flag' => 'https://flagcdn.com/ca.svg'],
+            ['code' => 'BIF', 'name' => 'Burundian Franc', 'symbol' => 'FBu', 'flag' => 'https://flagcdn.com/bi.svg'],
+            ['code' => 'UGX', 'name' => 'Ugandan Shilling', 'symbol' => 'USh', 'flag' => 'https://flagcdn.com/ug.svg'],
+            ['code' => 'RWF', 'name' => 'Rwandan Franc', 'symbol' => 'FRw', 'flag' => 'https://flagcdn.com/rw.svg'],
         ];
 
         foreach ($currencies as $currency) {
@@ -36,6 +39,9 @@ class ExchangeRateSeeder extends Seeder
             ['currency_id_from' => $currencyIds['NGN'], 'currency_id_to' => $currencyIds['EUR'], 'rate' => 0.00071],
             ['currency_id_from' => $currencyIds['CAD'], 'currency_id_to' => $currencyIds['NGN'], 'rate' => 950.30],
             ['currency_id_from' => $currencyIds['NGN'], 'currency_id_to' => $currencyIds['CAD'], 'rate' => 0.00105],
+            ['currency_id_from' => $currencyIds['CAD'], 'currency_id_to' => $currencyIds['BIF'], 'rate' => 2070.00],
+            ['currency_id_from' => $currencyIds['CAD'], 'currency_id_to' => $currencyIds['UGX'], 'rate' => 2800.00],
+            ['currency_id_from' => $currencyIds['CAD'], 'currency_id_to' => $currencyIds['RWF'], 'rate' => 900.50],
         ];
 
         foreach ($exchangeRates as $rate) {
