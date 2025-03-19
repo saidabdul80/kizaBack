@@ -29,6 +29,7 @@ class RecipientResource extends JsonResource
             'account_number' => $this->account_number,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'method' => Methods::getKey($this->method),
         ];
     }
 }

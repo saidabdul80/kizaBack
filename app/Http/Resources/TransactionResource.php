@@ -52,6 +52,7 @@ class TransactionResource extends JsonResource
                 'name'          => (isset($recipient['method']) && ($recipient['method'] === Methods::MOBILE_MONEY || $recipient['method'] === Methods::CASH_PICK_UP))
                     ? ($recipient['first_name'] . ' ' . $recipient['last_name'])
                     : ($recipient['account_name'] ?? ''),
+                'method' => Methods::getKey($this->method),
                 'customer_id'   => $recipient['customer_id'] ?? null,
                 'first_name'    => $recipient['first_name'] ?? null,
                 'last_name'     => $recipient['last_name'] ?? null,
