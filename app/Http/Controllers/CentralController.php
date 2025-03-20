@@ -529,7 +529,7 @@ class CentralController extends Controller
         }
         $code = generate_random_number();
         $expired_at = expires_at();
-        $user = $request->user();
+        //$user = $request->user();
         $user->update([
             'phone_number_otp' => $code,
             'phone_number_otp_expires_at' => $expired_at
