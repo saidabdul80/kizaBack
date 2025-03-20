@@ -577,8 +577,8 @@ class CentralController extends Controller
         if(!$user){
             return response()->json(['message' => 'Invalid email.'], 400);
         }
-        $user->otp = $code;
-        $user->phone_number_otp_expires_at = $expired_at;
+        $user->email_otp = $code;
+        $user->email_otp_expires_at = $expired_at;
         $user->save();
         //$data = Util::OTPUtils($user, $expired_at, $code);
         //AccountCreated::dispatch($user);
