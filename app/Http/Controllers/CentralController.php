@@ -522,11 +522,11 @@ class CentralController extends Controller
             'phone_number' => 'required|string|min:10|exists:users,phone_number'
         ]);
         
-        $user = Customer::where('phone_number', $request->phone_number)->first();
+        $phone_number = $request->phone_number;
+        $user = Customer::where('phone_number', $phone_number)->orWhere('pending_phone_number', $phone_number)->first();
         if(!$user){
             return response()->json(['message' => 'Invalid phone number.'], 400);
         }
-        $phone_number = $request->phone_number;
         $code = generate_random_number();
         $expired_at = expires_at();
         $user = $request->user();
@@ -569,14 +569,11 @@ class CentralController extends Controller
 
     public function resendEmailVerification(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email,exists:users,email'
-        ]);
-
+    
         $email = $request->email;
         $code = generate_random_number();
         $expired_at = expires_at();
-        $user = Customer::where('email', $email)->first();
+        $user = Customer::where('email', $email)->orWhere('pending_email', $email)->first();
         if(!$user){
             return response()->json(['message' => 'Invalid email.'], 400);
         }
