@@ -518,9 +518,9 @@ class CentralController extends Controller
     public function resendPhoneNumberVerification(Request $request)
     {
     
-        $request->validate([
-            'phone_number' => 'required|string|min:10|exists:users,phone_number'
-        ]);
+        // $request->validate([
+        //     'phone_number' => 'required|string|min:10|exists:users,phone_number'
+        // ]);
         
         $phone_number = $request->phone_number;
         $user = Customer::where('phone_number', $phone_number)->orWhere('pending_phone_number', $phone_number)->first();
