@@ -47,9 +47,9 @@ class TransactionFilter extends ModelFilter
         return $this->where('currency_id_to', $currencyId);
     }
 
-    public function dateRange($startDate, $endDate)
+    public function dateRange($date)
     {
-        return $this->whereBetween('created_at', [$startDate, $endDate]);
+        return $this->whereBetween('created_at', $date);
     }
 
     public function search($query)

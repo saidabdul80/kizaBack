@@ -542,7 +542,7 @@ class CentralController extends Controller
 
     public function confirmPhoneNumberVerification(Request $request)
     {
-        
+
         $request->validate([
             'phone_number' => 'required|string|exists:customers,phone_number',
             'otp' => 'required|string',
@@ -551,7 +551,7 @@ class CentralController extends Controller
         $phone_number = $request->phone_number;
         $customer = Customer::where('phone_number_otp',$request->otp)
             ->where(function($query) use($phone_number){
-                $query->where('email', $phone_number)->orWhere('pending_email', $phone_number);
+                $query->where('phone_number', $phone_number)->orWhere('pending_phone_number', $phone_number);
             })->where('phone_number_otp_expires_at','>',now())->first();
 
         if(!$customer){
