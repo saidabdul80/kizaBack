@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: 'Ajo By Cowris'
+  title: KIZA
   description: ''
   version: 1.0.0
 servers:
@@ -25,28 +25,28 @@ paths:
               properties:
                 first_name:
                   type: string
-                  description: ''
-                  example: eligendi
+                  description: 'Must be at least 3 characters.'
+                  example: mbcljelcevze
                   nullable: false
                 last_name:
                   type: string
-                  description: ''
-                  example: velit
+                  description: 'Must be at least 3 characters.'
+                  example: wkufxdubverdejqdxyjjwtawwdpwvdvetgijdlougfsthawjifpjnpmvqmahrfxppjdcfnyvxavspfxgxsaymvsi
                   nullable: false
                 phone_number:
                   type: string
                   description: ''
-                  example: error
+                  example: voluptates
                   nullable: false
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: fernando47@example.com
+                  example: smurphy@example.com
                   nullable: false
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: '`;_Vj!`j#XwpM'
+                  example: '#RzWf6)N.qT{}V,M'
                   nullable: false
               required:
                 - first_name
@@ -74,12 +74,12 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: ross01@example.com
+                  example: xkovacek@example.net
                   nullable: false
                 password:
                   type: string
                   description: ''
-                  example: esse
+                  example: voluptatem
                   nullable: false
               required:
                 - email
@@ -91,18 +91,18 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        200:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'The route api/login could not be found.'
+                  message: 'Login is not allowed for public routes'
                 properties:
                   message:
                     type: string
-                    example: 'The route api/login could not be found.'
+                    example: 'Login is not allowed for public routes'
       tags:
         - Endpoints
       security: []
@@ -113,18 +113,15 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        200:
           description: ''
           content:
             application/json:
               schema:
-                type: object
-                example:
-                  message: 'The route api/unauth_bootstrap could not be found.'
-                properties:
-                  message:
-                    type: string
-                    example: 'The route api/unauth_bootstrap could not be found.'
+                type: array
+                items:
+                  type: object
+                example: []
       tags:
         - Endpoints
       security: []
@@ -145,18 +142,18 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'The route api/bootstrap could not be found.'
+                  message: Unauthenticated.
                 properties:
                   message:
                     type: string
-                    example: 'The route api/bootstrap could not be found.'
+                    example: Unauthenticated.
       tags:
         - Endpoints
       security: []
@@ -167,18 +164,18 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'The route api/users could not be found.'
+                  message: Unauthenticated.
                 properties:
                   message:
                     type: string
-                    example: 'The route api/users could not be found.'
+                    example: Unauthenticated.
       tags:
         - Endpoints
       security: []
@@ -200,27 +197,27 @@ paths:
                 first_name:
                   type: string
                   description: ''
-                  example: mollitia
+                  example: accusamus
                   nullable: false
                 last_name:
                   type: string
                   description: ''
-                  example: accusantium
+                  example: vero
                   nullable: false
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: schinner.buddy@example.com
+                  example: wolf.danyka@example.org
                   nullable: false
                 phone_number:
                   type: string
                   description: ''
-                  example: tenetur
+                  example: cumque
                   nullable: false
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: 'gkKrOtS"8vC`LhT!'
+                  example: '0-FwCgK[!'
                   nullable: false
               required:
                 - first_name
@@ -236,18 +233,18 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'The route api/users/illum could not be found.'
+                  message: Unauthenticated.
                 properties:
                   message:
                     type: string
-                    example: 'The route api/users/illum could not be found.'
+                    example: Unauthenticated.
       tags:
         - Endpoints
       security: []
@@ -269,12 +266,12 @@ paths:
                 first_name:
                   type: string
                   description: ''
-                  example: est
+                  example: eligendi
                   nullable: false
                 last_name:
                   type: string
                   description: ''
-                  example: quo
+                  example: et
                   nullable: false
                 email:
                   type: string
@@ -289,7 +286,7 @@ paths:
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: '"$vN!d?;"gvJX>znZHG'
+                  example: "-';*d6yPA"
                   nullable: false
               required:
                 - first_name
@@ -310,7 +307,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: illum
+        example: reprehenderit
         required: true
         schema:
           type: string
@@ -338,12 +335,12 @@ paths:
                 id:
                   type: string
                   description: 'The <code>id</code> of an existing record in the users table.'
-                  example: eos
+                  example: eum
                   nullable: false
                 type:
                   type: string
                   description: ''
-                  example: utility_bills
+                  example: permanent_residence_card
                   nullable: false
                   enum:
                     - nin_slip
@@ -377,17 +374,17 @@ paths:
                 notify_security_alerts:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                   nullable: false
                 notify_ajo_alerts:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                   nullable: false
                 notify_product_announcements:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                   nullable: false
                 notify_support_tickets:
                   type: boolean
@@ -400,7 +397,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: quidem
+        example: omnis
         required: true
         schema:
           type: string
@@ -423,17 +420,17 @@ paths:
                 account_number:
                   type: string
                   description: ''
-                  example: error
+                  example: odio
                   nullable: true
                 bank_name:
                   type: string
                   description: ''
-                  example: aperiam
+                  example: est
                   nullable: true
                 account_name:
                   type: string
                   description: ''
-                  example: velit
+                  example: rem
                   nullable: true
       security: []
     parameters:
@@ -441,7 +438,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: sed
+        example: quidem
         required: true
         schema:
           type: string
@@ -452,18 +449,18 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'The route api/customers could not be found.'
+                  message: Unauthenticated.
                 properties:
                   message:
                     type: string
-                    example: 'The route api/customers could not be found.'
+                    example: Unauthenticated.
       tags:
         - Endpoints
       security: []
@@ -474,18 +471,18 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'The route api/customers/cupiditate could not be found.'
+                  message: Unauthenticated.
                 properties:
                   message:
                     type: string
-                    example: 'The route api/customers/cupiditate could not be found.'
+                    example: Unauthenticated.
       tags:
         - Endpoints
       security: []
@@ -529,7 +526,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the customer.'
-        example: cupiditate
+        example: illum
         required: true
         schema:
           type: string
@@ -540,18 +537,18 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'The route api/transactions could not be found.'
+                  message: Unauthenticated.
                 properties:
                   message:
                     type: string
-                    example: 'The route api/transactions could not be found.'
+                    example: Unauthenticated.
       tags:
         - Endpoints
       security: []
@@ -570,57 +567,82 @@ paths:
             schema:
               type: object
               properties:
-                customer_id:
-                  type: string
-                  description: 'The <code>id</code> of an existing record in the customers table.'
-                  example: eum
-                  nullable: false
                 amount:
                   type: number
-                  description: ''
-                  example: 36448784.47045
+                  description: 'Must be at least 0.01.'
+                  example: 10
                   nullable: false
-                currency_id:
+                currency_id_from:
                   type: string
                   description: 'The <code>id</code> of an existing record in the currencies table.'
-                  example: sed
+                  example: nemo
                   nullable: false
-                type:
+                currency_id_to:
+                  type: string
+                  description: 'The <code>id</code> of an existing record in the currencies table.'
+                  example: velit
+                  nullable: false
+                method:
                   type: string
                   description: ''
-                  example: deposit
+                  example: bank_deposit
                   nullable: false
                   enum:
-                    - deposit
-                    - fulfill
-                rate:
-                  type: number
+                    - mobile_money
+                    - bank_deposit
+                    - cash_pick_up
+                save_recipient:
+                  type: boolean
                   description: ''
-                  example: 317339.3042017
-                  nullable: false
-                fees:
-                  type: number
-                  description: ''
-                  example: 256832046.22302
-                  nullable: false
-                processed_by:
-                  type: string
-                  description: 'The <code>id</code> of an existing record in the users table.'
-                  example: null
+                  example: true
                   nullable: true
-                reference:
-                  type: string
+                recipient:
+                  type: object
                   description: ''
-                  example: facilis
+                  example: []
                   nullable: false
+                  properties:
+                    first_name:
+                      type: string
+                      description: 'This field is required when <code>method</code> is <code>mobile_money</code> or <code>cash_pick_up</code>. Must not be greater than 255 characters.'
+                      example: ywklvrigmegcnltsmkebcquar
+                      nullable: false
+                    last_name:
+                      type: string
+                      description: 'This field is required when <code>method</code> is <code>mobile_money</code> or <code>cash_pick_up</code>. Must not be greater than 255 characters.'
+                      example: hemvtimbzdgfxe
+                      nullable: false
+                    phone_number:
+                      type: string
+                      description: 'This field is required when <code>method</code> is <code>mobile_money</code>. Must not be greater than 15 characters.'
+                      example: xykgbnsljaviqr
+                      nullable: true
+                    email:
+                      type: string
+                      description: 'This field is required when <code>method</code> is <code>cash_pick_up</code>.  Must be a valid email address. Must not be greater than 255 characters.'
+                      example: trantow.kennedy@example.com
+                      nullable: true
+                    bank_name:
+                      type: string
+                      description: 'This field is required when <code>method</code> is <code>bank_deposit</code>. Must not be greater than 255 characters.'
+                      example: rjwueeteorxpmpfjbjlx
+                      nullable: true
+                    account_name:
+                      type: string
+                      description: 'This field is required when <code>method</code> is <code>bank_deposit</code>. Must not be greater than 255 characters.'
+                      example: xo
+                      nullable: true
+                    account_number:
+                      type: string
+                      description: 'This field is required when <code>method</code> is <code>bank_deposit</code>. Must not be greater than 50 characters.'
+                      example: ycwt
+                      nullable: true
               required:
-                - customer_id
                 - amount
-                - currency_id
-                - type
-                - rate
-                - fees
-                - reference
+                - currency_id_from
+                - currency_id_to
+                - method
+                - recipient
       security: []
   '/api/transactions/{id}':
     get:
@@ -629,18 +651,18 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'The route api/transactions/et could not be found.'
+                  message: Unauthenticated.
                 properties:
                   message:
                     type: string
-                    example: 'The route api/transactions/et could not be found.'
+                    example: Unauthenticated.
       tags:
         - Endpoints
       security: []
@@ -686,7 +708,69 @@ paths:
         in: path
         name: id
         description: 'The ID of the transaction.'
-        example: et
+        example: temporibus
+        required: true
+        schema:
+          type: string
+  /api/saved-recipients:
+    get:
+      summary: 'Display a listing of the saved recipients.'
+      operationId: displayAListingOfTheSavedRecipients
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/saved-recipients/{id}':
+    get:
+      summary: 'Display the specified saved recipient.'
+      operationId: displayTheSpecifiedSavedRecipient
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'Remove the specified saved recipient from storage.'
+      operationId: removeTheSpecifiedSavedRecipientFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the saved recipient.'
+        example: officiis
         required: true
         schema:
           type: string
@@ -697,18 +781,159 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        200:
           description: ''
           content:
             application/json:
               schema:
-                type: object
+                type: array
+                items:
+                  type: object
                 example:
-                  message: 'The route api/exchange-rates could not be found.'
-                properties:
-                  message:
-                    type: string
-                    example: 'The route api/exchange-rates could not be found.'
+                  -
+                    id: 1
+                    currency_id_from: 1
+                    currency_id_to: 2
+                    rate: '1300.500000'
+                    is_active: true
+                    created_at: '2025-03-10T09:53:45.000000Z'
+                    updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_from:
+                      id: 1
+                      code: USD
+                      name: 'US Dollar'
+                      symbol: $
+                      flag: 'https://flagcdn.com/us.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_to:
+                      id: 2
+                      code: NGN
+                      name: 'Nigerian Naira'
+                      symbol: ₦
+                      flag: 'https://flagcdn.com/ng.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                  -
+                    id: 2
+                    currency_id_from: 2
+                    currency_id_to: 1
+                    rate: '0.000770'
+                    is_active: true
+                    created_at: '2025-03-10T09:53:45.000000Z'
+                    updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_from:
+                      id: 2
+                      code: NGN
+                      name: 'Nigerian Naira'
+                      symbol: ₦
+                      flag: 'https://flagcdn.com/ng.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_to:
+                      id: 1
+                      code: USD
+                      name: 'US Dollar'
+                      symbol: $
+                      flag: 'https://flagcdn.com/us.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                  -
+                    id: 3
+                    currency_id_from: 3
+                    currency_id_to: 2
+                    rate: '1400.750000'
+                    is_active: true
+                    created_at: '2025-03-10T09:53:45.000000Z'
+                    updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_from:
+                      id: 3
+                      code: EUR
+                      name: Euro
+                      symbol: €
+                      flag: 'https://flagcdn.com/eu.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_to:
+                      id: 2
+                      code: NGN
+                      name: 'Nigerian Naira'
+                      symbol: ₦
+                      flag: 'https://flagcdn.com/ng.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                  -
+                    id: 4
+                    currency_id_from: 2
+                    currency_id_to: 3
+                    rate: '0.000710'
+                    is_active: true
+                    created_at: '2025-03-10T09:53:45.000000Z'
+                    updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_from:
+                      id: 2
+                      code: NGN
+                      name: 'Nigerian Naira'
+                      symbol: ₦
+                      flag: 'https://flagcdn.com/ng.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_to:
+                      id: 3
+                      code: EUR
+                      name: Euro
+                      symbol: €
+                      flag: 'https://flagcdn.com/eu.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                  -
+                    id: 5
+                    currency_id_from: 4
+                    currency_id_to: 2
+                    rate: '950.300000'
+                    is_active: true
+                    created_at: '2025-03-10T09:53:45.000000Z'
+                    updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_from:
+                      id: 4
+                      code: CAD
+                      name: 'Canadian Dollar'
+                      symbol: C$
+                      flag: 'https://flagcdn.com/ca.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_to:
+                      id: 2
+                      code: NGN
+                      name: 'Nigerian Naira'
+                      symbol: ₦
+                      flag: 'https://flagcdn.com/ng.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                  -
+                    id: 6
+                    currency_id_from: 2
+                    currency_id_to: 4
+                    rate: '0.001050'
+                    is_active: true
+                    created_at: '2025-03-10T09:53:45.000000Z'
+                    updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_from:
+                      id: 2
+                      code: NGN
+                      name: 'Nigerian Naira'
+                      symbol: ₦
+                      flag: 'https://flagcdn.com/ng.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
+                    currency_to:
+                      id: 4
+                      code: CAD
+                      name: 'Canadian Dollar'
+                      symbol: C$
+                      flag: 'https://flagcdn.com/ca.svg'
+                      created_at: '2025-03-10T09:53:45.000000Z'
+                      updated_at: '2025-03-10T09:53:45.000000Z'
       tags:
         - Endpoints
       security: []
@@ -730,17 +955,17 @@ paths:
                 currency_id_from:
                   type: string
                   description: 'The <code>id</code> of an existing record in the currencies table.'
-                  example: impedit
+                  example: velit
                   nullable: false
                 currency_id_to:
                   type: string
                   description: 'The <code>id</code> of an existing record in the currencies table.'
-                  example: earum
+                  example: ipsam
                   nullable: false
                 rate:
                   type: number
                   description: ''
-                  example: 46894807.07588
+                  example: 10.8
                   nullable: false
               required:
                 - currency_id_from
@@ -766,7 +991,7 @@ paths:
                 rate:
                   type: number
                   description: ''
-                  example: 53.3176855
+                  example: 196977.468345
                   nullable: false
               required:
                 - rate
@@ -785,14 +1010,14 @@ paths:
         in: path
         name: id
         description: 'The ID of the exchange rate.'
-        example: 11
+        example: 1
         required: true
         schema:
           type: integer
-  '/api/verify_email/{token}/{email}':
+  '/api/exchange_rates/{currencyCode}':
     get:
       summary: ''
-      operationId: getApiVerify_emailTokenEmail
+      operationId: getApiExchange_ratesCurrencyCode
       description: ''
       parameters: []
       responses:
@@ -803,43 +1028,107 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'The route api/verify_email/voluptates/jaquan.donnelly@example.net could not be found.'
+                  message: 'Currency not found'
                 properties:
                   message:
                     type: string
-                    example: 'The route api/verify_email/voluptates/jaquan.donnelly@example.net could not be found.'
+                    example: 'Currency not found'
       tags:
         - Endpoints
       security: []
     parameters:
       -
         in: path
-        name: token
-        description: 'Optional parameter.'
+        name: currencyCode
+        description: ''
+        example: 1
         required: true
         schema:
-          type: string
-        examples:
-          omitted:
-            summary: 'When the value is omitted'
-            value: ''
-          present:
-            summary: 'When the value is present'
-            value: voluptates
-      -
-        in: path
-        name: email
-        description: 'Optional parameter.'
+          type: integer
+  /api/resend_phone_number_verification:
+    post:
+      summary: ''
+      operationId: postApiResend_phone_number_verification
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
         required: true
-        schema:
-          type: string
-        examples:
-          omitted:
-            summary: 'When the value is omitted'
-            value: ''
-          present:
-            summary: 'When the value is present'
-            value: jaquan.donnelly@example.net
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phone_number:
+                  type: string
+                  description: 'Must be at least 10 characters.'
+                  example: awufhiwitbvlsjdxnfodvboyqlmtfbghkbpzlwyh
+                  nullable: false
+              required:
+                - phone_number
+      security: []
+  /api/confirm_phone_number_verification:
+    post:
+      summary: ''
+      operationId: postApiConfirm_phone_number_verification
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phone_number:
+                  type: string
+                  description: 'The <code>phone_number</code> of an existing record in the customers table.'
+                  example: facere
+                  nullable: false
+                otp:
+                  type: string
+                  description: ''
+                  example: voluptate
+                  nullable: false
+              required:
+                - phone_number
+                - otp
+      security: []
+  /api/verify_email:
+    post:
+      summary: ''
+      operationId: postApiVerify_email
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'The <code>email</code> of an existing record in the customers table.'
+                  example: grimes.garrick@example.net
+                  nullable: false
+                otp:
+                  type: string
+                  description: 'The <code>email_otp</code> of an existing record in the customers table.'
+                  example: dolorum
+                  nullable: false
+              required:
+                - email
+                - otp
+      security: []
   '/api/confirm-change-email/{token}':
     get:
       summary: ''
@@ -847,18 +1136,18 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        500:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'The route api/confirm-change-email/aut could not be found.'
+                  message: 'Server Error'
                 properties:
                   message:
                     type: string
-                    example: 'The route api/confirm-change-email/aut could not be found.'
+                    example: 'Server Error'
       tags:
         - Endpoints
       security: []
@@ -867,7 +1156,7 @@ paths:
         in: path
         name: token
         description: ''
-        example: aut
+        example: at
         required: true
         schema:
           type: string
@@ -890,7 +1179,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: ilind@example.net
+                  example: savanna.zemlak@example.com
                   nullable: false
               required:
                 - email
@@ -914,7 +1203,7 @@ paths:
                 username:
                   type: string
                   description: ''
-                  example: et
+                  example: repellat
                   nullable: false
                 user_type:
                   type: string
@@ -942,18 +1231,18 @@ paths:
               properties:
                 otp:
                   type: string
-                  description: ''
-                  example: cupiditate
+                  description: 'Must not be greater than 6 characters.'
+                  example: widj
                   nullable: false
                 email:
                   type: string
-                  description: 'Must be a valid email address.'
-                  example: ricky33@example.net
+                  description: 'Assuming OTP is a 6-character string. Must be a valid email address.'
+                  example: irma78@example.com
                   nullable: false
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: ">L;YM'#x6o)K${."
+                  example: '](4S$1Fm'
                   nullable: false
               required:
                 - otp
@@ -979,17 +1268,43 @@ paths:
                 type:
                   type: string
                   description: ''
-                  example: voluptatem
+                  example: eveniet
                   nullable: false
                 type_id:
                   type: string
                   description: ''
-                  example: sequi
+                  example: vero
                   nullable: false
               required:
                 - type
                 - type_id
       security: []
+  '/api/sms/{number}':
+    get:
+      summary: ''
+      operationId: getApiSmsNumber
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: ''
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: number
+        description: ''
+        example: et
+        required: true
+        schema:
+          type: string
 tags:
   -
     name: Endpoints

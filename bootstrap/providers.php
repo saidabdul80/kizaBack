@@ -2,5 +2,6 @@
 
 return [
     App\Providers\AppServiceProvider::class,
-    //EloquentFilter\ServiceProvider::class,
+    App\Providers\EventServiceProvider::class,
+    EloquentFilter\ServiceProvider::class,
 ];

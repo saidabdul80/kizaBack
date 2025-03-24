@@ -7,32 +7,6 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
-// function authorize($user, $permission, $req = null, $throwError = true): bool
-// {
-
-//     $isAuthorized = false;
-
-//     switch ($permission) {
-//         case CAN_ENROLL:
-//             $isAuthorized = Util::canPerformEnrollment($user, $req);
-//             break;
-//         case CAN_COLLECT_TAX:
-//             $isAuthorized = Util::canCollectPayment($user, $req);
-//             break;
-//         default:
-//             $isAuthorized = $user ? $user->hasPermissionTo($permission) : false;
-//             break;
-//     }
-
-//     if ($isAuthorized) {
-//         return true;
-//     }
-//     if ($throwError) {
-//         abort(403, "Permission Denied");
-//     }
-//     return false;
-// }
-
 function authorize($user, $permission, $req = null, $throwError = true): bool
 {
     $isAuthorized = false;
@@ -157,7 +131,7 @@ function get_date_range_from($from)
 function validate_phone_number($phoneNumber)
 {
     // Remove any non-numeric characters
-    $phoneNumber = preg_replace('/\D/', '', $phoneNumber);
+    $phoneNumber = preg_replace('/\D/', '', str_replace(' ', '', $phoneNumber));
 
     // Check if the number starts with '0' and remove it
     if (substr($phoneNumber, 0, 1) === '0') {
@@ -178,9 +152,9 @@ function validate_phone_number($phoneNumber)
 }
 
 
-function generate_random_number($length = 6)
+function generate_random_number($length = 5)
 {
-    return str_pad(mt_rand(0, 999999), $length, '0', STR_PAD_LEFT);
+    return str_pad(mt_rand(0, 99999), $length, '0', STR_PAD_LEFT);
 }
 
 function expires_at($t = 30)
@@ -285,4 +259,26 @@ function extractVariables($template){
         return (object)[];
     }
     return $response;
+}
+
+if (!function_exists('exchange')) {
+    function exchange()
+    {
+        return app('exchange');
+    }
+}
+
+if (!function_exists('userId')) {
+    function userId($guard = null)
+    {
+        return auth($guard)->id();
+    }
+}
+
+
+if (!function_exists('getValue')) {
+    function getValue($data, $key)
+    {
+        return $data[$key] ?? null;
+    }
 }

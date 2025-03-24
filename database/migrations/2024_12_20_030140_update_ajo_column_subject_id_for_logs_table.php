@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('activity_log', function (Blueprint $table) {
-            $table->string('subject_id')->change();
-            $table->string('causer_id')->change();
-        });
+        // Schema::table('activity_log', function (Blueprint $table) {
+        //     $table->string('subject_id')->change();
+        //     $table->string('causer_id')->change();
+        // });
     }
 
     /**
@@ -22,8 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('activity_log', function (Blueprint $table) {
-            //$table->bigInteger('subject_id')->change();
-        });
+        // Schema::table('activity_log', function (Blueprint $table) {
+        //     //$table->bigInteger('subject_id')->change();
+        // });
     }
 };

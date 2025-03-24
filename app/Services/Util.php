@@ -278,43 +278,13 @@ class Util
 
     static public function GenericUtils($emailOrPhone, $expired_at, $code,$user_id=null,$user_type=null, $type='verify'){
         $uniqueToken = Str::random(40);
-        return AjoCache::updateOrCreate([
-            'email'=>$emailOrPhone
-        ],[
-            'token'=> $uniqueToken,
-            'expires_at'=> $expired_at,
-            'data'=>  $code,
-            'user_type'=>$user_type,
-            'type'=>$type,
-            'user_id'=>$user_id
-        ]);
+        
     }
     
     static public function OTPUtils($user, $expired_at, $code, $type='verify'){
 
         $uniqueToken = Str::random(40);
-        AjoCache::updateOrCreate([
-            'email'=>$user->email
-        ],[
-            'token'=> $uniqueToken,
-            'expires_at'=> $expired_at,
-            'data'=>  $code,
-            'user_type'=>'user',
-            'type'=>$type,
-            'user_id'=>$user->id
-        ]);
-       // Cache::put($uniqueToken, [$user->email,$user_type], now()->addMinutes(10));
-
-        $data = [
-            "otp" => $code,
-            "expires_at" => $expired_at,
-            "email" => $user->email,
-            "token"=>$uniqueToken,
-            "user_type" =>'user',
-            "name" => $user->business_name ?? $user->first_name . ' ' . $user->middle_name . ' ' . $user->last_name
-        ];
-
-        return $data;
+       
     }
 
     static public function imageUrlToBase64($url)
@@ -329,27 +299,6 @@ class Util
         }catch(\Exception $e){
             Log::error("Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Foun: Util::imageUrlToBase64");
         }
-    }
-
-    static public function invoiceInitiated($invoice){
-        $link = config('default.portal.domain') . '/' . 'verify/' . $invoice->invoice_number;
-        $taxable = $invoice->taxable;
-       
-        $invoiceMailData = $taxable->toArray();
-        $invoiceMailData['email'] = $invoiceMailData['email'] ?? config('default.email');
-        $invoiceMailData['link'] = $link;
-        $invoiceMailData['message'] = "
-                <p>
-                    A payment of {$invoice->amount} has been initiated on your account with invoice number ({$invoice->invoice_number}).
-                </p>
-                <p>
-                    Kindly use the link below to proceed with payment:
-                </p>
-                <a href='$link'>Click to Continue</a>
-            ";
-
-        QueueMail::dispatch($invoiceMailData, 'invoice_initiated', "GIRS Invoice Created");
-
     }
 
     public static function sendSMS($to, $message, $type = "single")
@@ -374,7 +323,7 @@ class Util
     
                 foreach ($to as $recipient) {
                     $response = $client->messages->create(
-                        $recipient,
+                        validate_phone_number($recipient),
                         [
                             'messagingServiceSid' => $twilioMessageSid,
                             'body' => $message,
@@ -385,7 +334,7 @@ class Util
                 }
             } else {
                 $response = $client->messages->create(
-                    $to,
+                    validate_phone_number($to),
                     [
                         'messagingServiceSid' => $twilioMessageSid,
                         'body' => $message,
@@ -418,120 +367,6 @@ class Util
         return substr($referenceCode, 0, 15);
     }
 
-    public static function pendingContribution($ajo, $ajoMember) {
-        $lastComplianceDate = $ajoMember->last_date_of_compliance ?? $ajo->start_date;
-        $frequency = $ajo->frequency;
-        $now = Carbon::parse($ajo->end_date);
-    
-        // Calculate pending contribution periods
-        $pendingPeriods = match (intval($frequency)) {
-            Frequency::DAILY => intval(Carbon::parse($lastComplianceDate)->diffInDays($now)),
-            Frequency::WEEKLY => intval(Carbon::parse($lastComplianceDate)->diffInWeeks($now)),
-            Frequency::MONTHLY => intval(Carbon::parse($lastComplianceDate)->diffInMonths($now)),
-            Frequency::YEARLY => intval(Carbon::parse($lastComplianceDate)->diffInYears($now)),
-            default => 0,
-        };
-
-        $period = match (intval($frequency)) {
-            Frequency::DAILY => 'days',
-            Frequency::WEEKLY => 'weeks',
-            Frequency::MONTHLY => 'months',
-            Frequency::YEARLY => 'years',
-            default => 0,
-        };
-           
-    
-        if ($pendingPeriods <= 0) {
-            return[ 
-              'period'=> "No pending contributions.",
-              'pending' => 0,
-            ];
-        }
-
-        return [
-           'period'=> $pendingPeriods . " " . $period,
-           'pending' => $pendingPeriods,
-        ];
-    
-    }
-
-    public static function makeContribution($ajo, $ajoMember) {
-        $lastComplianceDate = $ajoMember->last_date_of_compliance ?? $ajo->start_date;
-        $frequency = $ajo->frequency;
-        $now = Carbon::now();
-    
-        // Calculate pending contribution periods
-        $pendingPeriods = match (intval($frequency)) {
-            Frequency::DAILY => intval(Carbon::parse($lastComplianceDate)->diffInDays($now)),
-            Frequency::WEEKLY => intval(Carbon::parse($lastComplianceDate)->diffInWeeks($now)),
-            Frequency::MONTHLY => intval(Carbon::parse($lastComplianceDate)->diffInMonths($now)),
-            Frequency::YEARLY => intval(Carbon::parse($lastComplianceDate)->diffInYears($now)),
-            default => 0,
-        };
-
-        if ($pendingPeriods <= 0) {
-            return "No pending contributions.";
-        }
-    
-        $user = $ajoMember->user;
-        $userWallet = $user->getWallet($ajo->currency);
-        $ajoWallet = $ajo->getWallet($ajo->currency);
-    
-        if (!$userWallet || !$ajoWallet) {
-            return "Currency wallet not found for either user or Ajo.";
-        }
-    
-        // Calculate pending amount
-        $totalPendingAmount = $pendingPeriods * $ajo->amount;
-    
-        if ($userWallet->balance < $ajo->amount) {
-            return "Insufficient funds for even one contribution.";
-        }
-    
-        // Calculate max contributions based on available balance
-        $maxPeriodsAffordable = floor($userWallet->balance / $ajo->amount);
-        $actualContributionPeriods = min($maxPeriodsAffordable, $pendingPeriods);
-    
-        // Calculate the actual amount to contribute
-        $actualAmount = $actualContributionPeriods * $ajo->amount;
-    
-        // Update last compliance date based on actual contributions
-        $lastComplianceDate = Carbon::parse($lastComplianceDate);
-        $lastExpectedDate = match (intval($frequency))  {
-            Frequency::DAILY => $lastComplianceDate->addDays($actualContributionPeriods),
-            Frequency::WEEKLY => $lastComplianceDate->addWeeks($actualContributionPeriods),
-            Frequency::MONTHLY => $lastComplianceDate->addMonths($actualContributionPeriods),
-            Frequency::YEARLY => $lastComplianceDate->addYears($actualContributionPeriods),
-            default => $lastComplianceDate,
-        };
-        
-        DB::beginTransaction();
-        try {
-            // Debit the user's wallet  
-            $userWallet->withdraw($actualAmount);
-    
-            // Credit the Ajo's wallet
-            $ajoWallet->deposit($actualAmount, [
-                'note' => 'Payment received',
-                'payee_type' => get_class($userWallet),
-                'payee_id' => $userWallet->id,
-            ]);
-            $ajoWallet->total_collection = $ajoWallet->total_collection + $actualAmount;
-            $ajoWallet->save();
-            // Update last compliance date
-            $ajoMember->last_date_of_compliance = $lastExpectedDate->format('Y-m-d');
-            $ajoMember->contributed += $actualAmount;
-            $ajoMember->save();
-    
-            DB::commit();
-    
-            return "Contribution successful. {$actualAmount} credited to Ajo wallet for {$actualContributionPeriods} period(s).";
-        } catch (\Exception $e) {
-            DB::rollBack();
-            //abort(400, "Contribution failed: " . $e->getMessage());
-            return "Contribution failed: " . $e->getMessage();
-        }
-    }
     
 
 }

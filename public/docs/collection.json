@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost:8004\/"
+            "value": "http:\/\/localhost:8004"
         }
     ],
     "info": {
-        "name": "Ajo By Cowris",
-        "_postman_id": "6fe287fb-ebb6-4696-8844-700077e87dbc",
+        "name": "KIZA",
+        "_postman_id": "0acc18cd-2cfb-417b-9a28-ce67318463fd",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -37,11 +37,15 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"eligendi\",\"last_name\":\"velit\",\"phone_number\":\"error\",\"email\":\"fernando47@example.com\",\"password\":\"`;_Vj!`j#XwpM\"}"
+                            "raw": "{\"first_name\":\"mbcljelcevze\",\"last_name\":\"wkufxdubverdejqdxyjjwtawwdpwvdvetgijdlougfsthawjifpjnpmvqmahrfxppjdcfnyvxavspfxgxsaymvsi\",\"phone_number\":\"voluptates\",\"email\":\"smurphy@example.com\",\"password\":\"#RzWf6)N.qT{}V,M\"}"
                         },
                         "description": "",
                         "auth": {
@@ -68,11 +72,15 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"ross01@example.com\",\"password\":\"esse\"}"
+                            "raw": "{\"email\":\"xkovacek@example.net\",\"password\":\"voluptatem\"}"
                         },
                         "description": "",
                         "auth": {
@@ -99,6 +107,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -123,8 +135,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/login could not be found.\"\n}",
+                            "code": 200,
+                            "body": "{\"message\":\"Login is not allowed for public routes\"}",
                             "name": ""
                         }
                     ]
@@ -147,6 +159,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -171,8 +187,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/unauth_bootstrap could not be found.\"\n}",
+                            "code": 200,
+                            "body": "[]",
                             "name": ""
                         }
                     ]
@@ -195,6 +211,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -223,6 +243,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -247,8 +271,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/bootstrap could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -271,6 +295,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -295,8 +323,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/users could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -319,11 +347,15 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"mollitia\",\"last_name\":\"accusantium\",\"email\":\"schinner.buddy@example.com\",\"phone_number\":\"tenetur\",\"password\":\"gkKrOtS\\\"8vC`LhT!\"}"
+                            "raw": "{\"first_name\":\"accusamus\",\"last_name\":\"vero\",\"email\":\"wolf.danyka@example.org\",\"phone_number\":\"cumque\",\"password\":\"0-FwCgK[!\"}"
                         },
                         "description": "",
                         "auth": {
@@ -344,7 +376,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "illum",
+                                    "value": "reprehenderit",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -358,6 +390,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -382,8 +418,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/users\/illum could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -400,7 +436,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sapiente",
+                                    "value": "earum",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -414,11 +450,15 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"est\",\"last_name\":\"quo\",\"password\":\"\\\"$vN!d?;\\\"gvJX>znZHG\"}"
+                            "raw": "{\"first_name\":\"eligendi\",\"last_name\":\"et\",\"password\":\"-';*d6yPA\"}"
                         },
                         "description": "",
                         "auth": {
@@ -439,7 +479,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "unde",
+                                    "value": "non",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -453,6 +493,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -481,6 +525,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
@@ -488,13 +536,13 @@
                             "formdata": [
                                 {
                                     "key": "id",
-                                    "value": "eos",
+                                    "value": "eum",
                                     "type": "text",
                                     "description": "The <code>id<\/code> of an existing record in the users table."
                                 },
                                 {
                                     "key": "type",
-                                    "value": "utility_bills",
+                                    "value": "permanent_residence_card",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -524,7 +572,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quidem",
+                                    "value": "omnis",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -538,11 +586,15 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"notify_security_alerts\":true,\"notify_ajo_alerts\":false,\"notify_product_announcements\":true,\"notify_support_tickets\":true}"
+                            "raw": "{\"notify_security_alerts\":false,\"notify_ajo_alerts\":true,\"notify_product_announcements\":false,\"notify_support_tickets\":true}"
                         },
                         "description": "",
                         "auth": {
@@ -563,7 +615,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sed",
+                                    "value": "quidem",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -577,11 +629,15 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"account_number\":\"error\",\"bank_name\":\"aperiam\",\"account_name\":\"velit\"}"
+                            "raw": "{\"account_number\":\"odio\",\"bank_name\":\"est\",\"account_name\":\"rem\"}"
                         },
                         "description": "",
                         "auth": {
@@ -608,6 +664,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -632,8 +692,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/customers could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -650,7 +710,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "cupiditate",
+                                    "value": "illum",
                                     "description": "The ID of the customer."
                                 }
                             ]
@@ -664,6 +724,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -688,8 +752,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/customers\/cupiditate could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -706,7 +770,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "2",
                                     "description": "The ID of the customer."
                                 }
                             ]
@@ -720,6 +784,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
@@ -745,7 +813,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "11",
+                                    "value": "2",
                                     "description": "The ID of the customer."
                                 }
                             ]
@@ -759,6 +827,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -787,6 +859,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -811,8 +887,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/transactions could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -835,11 +911,15 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"customer_id\":\"eum\",\"amount\":36448784.47045,\"currency_id\":\"sed\",\"type\":\"deposit\",\"rate\":317339.3042017,\"fees\":256832046.22301784,\"reference\":\"facilis\"}"
+                            "raw": "{\"amount\":10,\"currency_id_from\":\"nemo\",\"currency_id_to\":\"velit\",\"method\":\"bank_deposit\",\"save_recipient\":true,\"recipient\":{\"first_name\":\"ywklvrigmegcnltsmkebcquar\",\"last_name\":\"hemvtimbzdgfxe\",\"phone_number\":\"xykgbnsljaviqr\",\"email\":\"trantow.kennedy@example.com\",\"bank_name\":\"rjwueeteorxpmpfjbjlx\",\"account_name\":\"xo\",\"account_number\":\"ycwt\"}}"
                         },
                         "description": "",
                         "auth": {
@@ -860,7 +940,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "temporibus",
                                     "description": "The ID of the transaction."
                                 }
                             ]
@@ -874,6 +954,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -898,8 +982,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/transactions\/et could not be found.\"\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -916,7 +1000,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "1",
                                     "description": "The ID of the transaction."
                                 }
                             ]
@@ -930,6 +1014,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
@@ -955,7 +1043,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "1",
                                     "description": "The ID of the transaction."
                                 }
                             ]
@@ -969,6 +1057,162 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display a listing of the saved recipients.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/saved-recipients",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/saved-recipients"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display the specified saved recipient.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/saved-recipients\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/saved-recipients\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "officiis",
+                                    "description": "The ID of the saved recipient."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Remove the specified saved recipient from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/saved-recipients\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/saved-recipients\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "repudiandae",
+                                    "description": "The ID of the saved recipient."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -997,6 +1241,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -1021,8 +1269,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/exchange-rates could not be found.\"\n}",
+                            "code": 200,
+                            "body": "[{\"id\":1,\"currency_id_from\":1,\"currency_id_to\":2,\"rate\":\"1300.500000\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":1,\"code\":\"USD\",\"name\":\"US Dollar\",\"symbol\":\"$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/us.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":2,\"currency_id_from\":2,\"currency_id_to\":1,\"rate\":\"0.000770\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":1,\"code\":\"USD\",\"name\":\"US Dollar\",\"symbol\":\"$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/us.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":3,\"currency_id_from\":3,\"currency_id_to\":2,\"rate\":\"1400.750000\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":3,\"code\":\"EUR\",\"name\":\"Euro\",\"symbol\":\"\\u20ac\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/eu.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":4,\"currency_id_from\":2,\"currency_id_to\":3,\"rate\":\"0.000710\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":3,\"code\":\"EUR\",\"name\":\"Euro\",\"symbol\":\"\\u20ac\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/eu.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":5,\"currency_id_from\":4,\"currency_id_to\":2,\"rate\":\"950.300000\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":4,\"code\":\"CAD\",\"name\":\"Canadian Dollar\",\"symbol\":\"C$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ca.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":6,\"currency_id_from\":2,\"currency_id_to\":4,\"rate\":\"0.001050\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":4,\"code\":\"CAD\",\"name\":\"Canadian Dollar\",\"symbol\":\"C$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ca.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}}]",
                             "name": ""
                         }
                     ]
@@ -1045,11 +1293,15 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"currency_id_from\":\"impedit\",\"currency_id_to\":\"earum\",\"rate\":46894807.07588}"
+                            "raw": "{\"currency_id_from\":\"velit\",\"currency_id_to\":\"ipsam\",\"rate\":10.8}"
                         },
                         "description": "",
                         "auth": {
@@ -1070,7 +1322,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "11",
+                                    "value": "1",
                                     "description": "The ID of the exchange rate."
                                 }
                             ]
@@ -1084,11 +1336,15 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"rate\":53.3176855}"
+                            "raw": "{\"rate\":196977.468345}"
                         },
                         "description": "",
                         "auth": {
@@ -1109,7 +1365,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "7",
+                                    "value": "1",
                                     "description": "The ID of the exchange rate."
                                 }
                             ]
@@ -1123,6 +1379,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -1134,24 +1394,18 @@
                     "response": []
                 },
                 {
-                    "name": "GET api\/verify_email\/{token?}\/{email?}",
+                    "name": "GET api\/exchange_rates\/{currencyCode}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/verify_email\/:token\/:email",
+                            "path": "api\/exchange_rates\/:currencyCode",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/verify_email\/:token\/:email",
+                            "raw": "{{baseUrl}}\/api\/exchange_rates\/:currencyCode",
                             "variable": [
                                 {
-                                    "id": "token",
-                                    "key": "token",
-                                    "value": "voluptates",
-                                    "description": ""
-                                },
-                                {
-                                    "id": "email",
-                                    "key": "email",
-                                    "value": "jaquan.donnelly%40example.net",
+                                    "id": "currencyCode",
+                                    "key": "currencyCode",
+                                    "value": "1",
                                     "description": ""
                                 }
                             ]
@@ -1165,6 +1419,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -1190,10 +1448,115 @@
                                 }
                             ],
                             "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/verify_email\/voluptates\/jaquan.donnelly@example.net could not be found.\"\n}",
+                            "body": "{\"message\":\"Currency not found\"}",
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "POST api\/resend_phone_number_verification",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/resend_phone_number_verification",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/resend_phone_number_verification"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"phone_number\":\"awufhiwitbvlsjdxnfodvboyqlmtfbghkbpzlwyh\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/confirm_phone_number_verification",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/confirm_phone_number_verification",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/confirm_phone_number_verification"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"phone_number\":\"facere\",\"otp\":\"voluptate\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/verify_email",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/verify_email",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/verify_email"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"grimes.garrick@example.net\",\"otp\":\"dolorum\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 },
                 {
                     "name": "GET api\/confirm-change-email\/{token}",
@@ -1207,7 +1570,7 @@
                                 {
                                     "id": "token",
                                     "key": "token",
-                                    "value": "aut",
+                                    "value": "at",
                                     "description": ""
                                 }
                             ]
@@ -1221,6 +1584,10 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": null,
@@ -1245,8 +1612,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"The route api\/confirm-change-email\/aut could not be found.\"\n}",
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
                             "name": ""
                         }
                     ]
@@ -1269,11 +1636,15 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"ilind@example.net\"}"
+                            "raw": "{\"email\":\"savanna.zemlak@example.com\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1300,11 +1671,15 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"et\"}"
+                            "raw": "{\"username\":\"repellat\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1331,11 +1706,15 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"otp\":\"cupiditate\",\"email\":\"ricky33@example.net\",\"password\":\">L;YM'#x6o)K${.\"}"
+                            "raw": "{\"otp\":\"widj\",\"email\":\"irma78@example.com\",\"password\":\"](4S$1Fm\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1362,11 +1741,15 @@
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"voluptatem\",\"type_id\":\"sequi\"}"
+                            "raw": "{\"type\":\"eveniet\",\"type_id\":\"vero\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1374,6 +1757,66 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "GET api\/sms\/{number}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/sms\/:number",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/sms\/:number",
+                            "variable": [
+                                {
+                                    "id": "number",
+                                    "key": "number",
+                                    "value": "et",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-type",
+                                    "value": "text\/html; charset=UTF-8"
+                                },
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         }

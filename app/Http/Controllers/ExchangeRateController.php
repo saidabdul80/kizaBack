@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ExchangeRateToResource;
+use App\Models\Currency;
 use App\Models\ExchangeRate;
 use Illuminate\Http\Request;
 
@@ -33,5 +35,36 @@ class ExchangeRateController extends Controller
     {
         $exchangeRate->delete();
         return response()->json(['message' => 'Exchange rate deleted successfully']);
+    }
+
+
+    public function getRatesByCurrency($currencyCode)
+    {
+        // Find the currency ID
+        $currency = Currency::where('code', strtoupper($currencyCode))->first();
+
+        if (!$currency) {
+            return response()->json(['message' => 'Currency not found'], 404);
+        }
+
+        // Get exchange rates where the given currency is the base (from)
+        $exchangeRates = ExchangeRate::with(['currencyTo'])
+            ->where('currency_id_from', $currency->id)
+            ->where('is_active', true)
+            ->get();
+
+        if ($exchangeRates->isEmpty()) {
+            return response()->json(['message' => 'No exchange rates found for this currency'], 404);
+        }
+
+        return response()->json([
+            'base_currency' => [
+                'code' => $currency->code,
+                'name' => $currency->name,
+                'symbol' => $currency->symbol,
+                'flag' => $currency->flag
+            ],
+            'exchange_rates' => ExchangeRateToResource::collection($exchangeRates)
+        ]);
     }
 }

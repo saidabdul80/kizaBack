@@ -24,7 +24,11 @@ return new class extends Migration {
             $table->string('email_otp', 10)->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('phone_number_otp', 10)->nullable();
+            $table->string('pending_email')->nullable();
+            $table->string('pending_phone_number')->nullable();
+            $table->string('password')->nullable();
             $table->timestamp('phone_number_verified_at')->nullable();
+            $table->dateTime('email_otp_expires_at')->nullable();
             $table->timestamps();
         });
     }

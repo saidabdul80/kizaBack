@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\AccountCreated;
+use App\Events\CustomerRegistered;
 use App\Events\EmailVerified;
 use App\Jobs\QueueMail;
 //use App\Jobs\SendSMS;
@@ -24,6 +25,7 @@ use App\Mail\SendMail;
 use App\Mail\SendMailNoQueue;
 use App\Models\Ajo;
 use App\Models\AjoMember;
+use App\Models\Customer;
 use App\Models\User;
 use App\Models\Wallet;
 use App\Models\WalletTransaction;
@@ -224,6 +226,11 @@ class CentralController extends Controller
         }
 
         return response()->json(['message' => 'Invalid Identity Number'], 422);
+    }
+
+    public function testSms($number){
+
+        Util::sendSMS('+2348065291757', 'Test SMS');
     }
 
     private function isUserAlreadyVerified($user, $verificationType)
@@ -475,67 +482,82 @@ class CentralController extends Controller
 
     public function verifyEmail(Request $request)
     {
+        $request->validate([
+            'email' => 'required|string|exists:customers,email',
+            'otp' => 'required|string|exists:customers,email_otp'
+        ]);
+
         $email = $request->email;
-        $token = $request->token;
+        $token = $request->otp;
     
         // Find the user with the provided token and email, and ensure the token is not expired
-        $user = User::where('otp', $token)
-            ->where('email', $email)
-            ->where('otp_expires_at', '>=', now())
+        $user = Customer::where('email_otp', $token)
+            ->where(function($query) use($email){
+                $query->where('email', $email)->orWhere('pending_email', $email);
+            })
+            ->where('email_otp_expires_at', '>=', now())
             ->first();
-       
-        if ($user) {
+            if(!$user){
+                return response()->json(['message' => 'Invalid Expired OTP'], 400);
+            }
             // Update user to mark the email as verified
-            $user->otp = null;
-            $user->otp_expires_at = null;
+            $user->email_otp = null;
+            $user->email_otp_expires_at = null;
             $user->email_verified_at = now();
-            $user->is_verified_email = 1;
             $user->save();
     
             // Dispatch the email verified event
-            EmailVerified::dispatch($user);
+            Mail::to($user->email)->send(new SendMailNoQueue('account_created','Kiza Email Verified', [
+                'full_name' => $user->first_name . ' ' . $user->last_name
+
+            ]));
     
-            return response()->json(['success' => true], 200);
-        }
-    
-        // Return a JSON response with a 400 status code for invalid or expired token
-        return response()->json(['success' => false, 'message' => 'Invalid or expired token.'], 400);
+            return response()->json(['success' => 'Email verified successfully.'], 200);
+
     }
 
     public function resendPhoneNumberVerification(Request $request)
     {
         $request->validate([
-            'phone_number' => 'required|string|min:10|unique:users,phone_number,' . $request->user()->id,
+            'phone_number' => 'required|min:10',
         ]);
-    
+        
         $phone_number = $request->phone_number;
-        $code = generate_random_number();
-        $expired_at = expires_at();
-        $user = $request->user();
-        $user->update([
-            'phone_number' => $request->phone_number,
-            'phone_number_otp' => $code,
-            'phone_number_otp_expires_at' => $expired_at
-        ]);
+        $user = Customer::where('phone_number', $phone_number)->orWhere('pending_phone_number', $phone_number)->first();
     
-        Util::sendSMS($phone_number, 'Your OTP code is ' . $code . ' and expires in 10 minutes.', 'single');
+        if(!$user){
+            return response()->json(['message' => 'Invalid phone number.'], 400);
+        }
+    
+        event(new CustomerRegistered($user,'sms'));
     
         return response()->json(['message' => 'Phone number has been resent.'], 200);
     }
 
     public function confirmPhoneNumberVerification(Request $request)
     {
+
         $request->validate([
-            'phone_number' => 'required|string|unique:users,phone_number,'. $request->user()->id,
+            'phone_number' => 'required|string|exists:customers,phone_number',
             'otp' => 'required|string',
         ]);
 
-        $res = Util::verifyPhoneNumber($request);
-        if($res){
-            return response()->json(['message' => 'Phone number verified successfully.'], 200);
-        }else{
-            return response()->json(['message' => 'Invalid or expired OTP.'], 400);
+        $phone_number = $request->phone_number;
+        $customer = Customer::where('phone_number_otp',$request->otp)
+            ->where(function($query) use($phone_number){
+                $query->where('phone_number', $phone_number)->orWhere('pending_phone_number', $phone_number);
+            })->where('phone_number_otp_expires_at','>',now())->first();
+
+        if(!$customer){
+            return response()->json(['message' => 'Invalid phone number. or expired OTP.'], 400);
         }
+      
+        $customer->update([
+            'phone_number_verified_at' => now(),
+            'phone_number_otp' => null,
+        ]);
+
+        return response()->json(['message' => 'Phone number verified successfully.'], 200);
 
     }
 
@@ -544,29 +566,16 @@ class CentralController extends Controller
         $request->validate([
             'email' => 'required|email'
         ]);
-
+    
         $email = $request->email;
-        $code = generate_random_number();
-        $expired_at = expires_at();
-        $user = User::where('email', $email)->first();
-        $user->otp = $code;
-        $user->otp_expires_at = $expired_at;
-        $user->save();
-        //$data = Util::OTPUtils($user, $expired_at, $code);
-        //AccountCreated::dispatch($user);
-       
-        
-        //$user->update(['otp' => $code, 'otp_expires_at' => $expired_at]);
-        $uniqueToken = Str::random(40);
-        $data = [
-            "otp" => $code,
-            "expires_at" => $expired_at,
-            "email" => $user->email,
-            "token"=>$uniqueToken,
-            "user_type" =>'user',
-            "name" => $user->full_name  
-        ];
-        Mail::to($user->email)->send(new SendMailNoQueue('otp', "Account Verification", $data));
+        $customer = Customer::where('email', $email)->orWhere('pending_email', $email)->first();
+
+        if(!$customer){
+            return response()->json(['message' => 'Invalid email address.'], 400);
+        }
+    
+        event(new CustomerRegistered($customer,'email'));
+    
         return response()->json(['message' => 'Email han been resent.'], 200);
     }
 
@@ -687,13 +696,13 @@ class CentralController extends Controller
             'user_type' => 'nullable',
         ]);
         $user = null;
-        $user = User::where('phone_number', $request->username)->orWhere('email', $request->username)->first();
+        $user = Customer::where('phone_number', $request->username)->orWhere('email', $request->username)->first();
        
-        $otp= mt_rand(100000,999999);
+        $otp= mt_rand(10000,99999);
         $otp_expires_at = expires_at(30);
         if ($user) {
-            $user->otp =$otp;
-            $user->otp_expires_at =  $otp_expires_at;
+            $user->email_otp =$otp;
+            $user->phone_number_otp_expires_at =  $otp_expires_at;
             $user->save();
             $data = [];
             // $util = Util::GenericUtils($user->email,expires_at(30),,$user?->id, 'user','forgot_password');
@@ -711,32 +720,32 @@ class CentralController extends Controller
 
     public function confirmForgotPassword(Request $request)
     {
-        // Check if the token exists and is valid
-
+        // Validate request
         $request->validate([
-            'otp' => 'required',
+            'otp' => 'required|string|max:6', // Assuming OTP is a 6-character string
             'email' => 'required|email',
-            'password' => 'required|confirmed|min:6',
+            'password' => 'required|string|confirmed|min:6',
         ]);
-
-        $user = User::where('otp', $request->otp)
-                    ->where('email', $request->email)
-                    ->where('otp_expires_at', '>=', now())
+    
+        // Find the user with matching OTP and email, ensuring OTP is not expired
+        $user = Customer::where('email', $request->email)
+                    ->where('email_otp', $request->otp)
+                    ->where('phone_number_otp_expires_at', '>=', now())
                     ->first();
-
-        // Return error if the token is invalid or expired
+        // Check if the user exists
         if (!$user) {
-            return view('400', ['message' => 'Invalid or expired OTP.']);
+            return response()->json(['message' => 'Invalid or expired OTP.'], 400);
         }
-
+    
         // Reset the password
-        $user->password = Hash::make('password'); // default password
-        $user->otp = null;
-        $user->otp_expires_at = null;
-        $user->save();
-        return response()->json(['message' => 'Password reset successfully.']);
+        $user->update([
+            'password' => Hash::make($request->password),
+            'email_otp' => null,
+            'phone_number_otp_expires_at' => null,
+        ]);
+    
+        return response()->json(['message' => 'Password reset successfully.'], 200);
     }
-
 
     public function validateAccountNumber(Request $request)
     {

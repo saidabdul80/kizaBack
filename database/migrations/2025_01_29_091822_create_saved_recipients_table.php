@@ -10,9 +10,13 @@ return new class extends Migration {
         Schema::create('saved_recipients', function (Blueprint $table) {
             $table->id();
             $table->foreignId('customer_id')->constrained()->cascadeOnDelete();
-            $table->string('name');
-            $table->string('phone');
-            $table->text('bank_account_details');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('phone_number');
+            $table->string('email');
+            $table->string('bank_name');
+            $table->string('account_name');
+            $table->string('account_number');
             $table->timestamps();
         });
     }

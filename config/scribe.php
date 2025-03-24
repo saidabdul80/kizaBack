@@ -47,13 +47,13 @@ return [
     'type' => 'static',
 
     // See https://scribe.knuckles.wtf/laravel/reference/config#theme for supported options
-    'theme' => 'nasty',
+    'theme' => 'default',
 
     'static' => [
         // HTML documentation, assets and Postman collection will be generated to this folder.
         // Source Markdown will still be in resources/docs.
         'output_path' => 'public/docs',
-    ],
+    ],  
 
     'laravel' => [
         // Whether to automatically create a docs endpoint for you to view your generated docs.
@@ -224,6 +224,7 @@ INTRO
                 [
                     'Content-Type' => 'application/json',
                     'Accept' => 'application/json',
+                    'Authorization' => 'Bearer ',
                 ]
             ]
         ],

@@ -5,7 +5,9 @@ namespace App\Enums;
 enum PaymentStatus: int
 {
     const PENDING = 0;
-    const SUCCESSFUL = 1;
+    const WAITING = 1;
+    const RECIEVED = 2; 
+    const COMPLETED = 3;
     const FAILED = 2;
 
     public static function getKey($value)
