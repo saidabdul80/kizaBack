@@ -1,12 +1,11 @@
 <?php
 namespace App\Models;
 
-use App\Core\BaseModel;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Transaction extends BaseModel
+class Transaction extends Model
 {
     use HasFactory, Filterable;
 
