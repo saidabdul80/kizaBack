@@ -85,6 +85,7 @@ return [
         "name" => "Rhoda Ogunesan",
         "bank_name" => "Wema Bank",
     ],
+    'support_email' => 'support@kiza.com',
    
 
 

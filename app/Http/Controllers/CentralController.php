@@ -887,4 +887,15 @@ class CentralController extends Controller
         return response()->json([]);
       
     }
+
+    public function sendMail(Request $request){
+        $request->validate([
+            'email' => 'required|email',
+            'name' => 'required',
+            'message' => 'required',
+        ]);
+        $data = $request->all();
+        Mail::to(config('default.support_email'))->send(new SendMailNoQueue('support_mail','Support Mail',$data));
+        return response()->json(['message' => 'Mail sent successfully.']);
+    }
 }

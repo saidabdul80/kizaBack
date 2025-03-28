@@ -52,6 +52,7 @@ Route::post('/verify_email', [CentralController::class, 'verifyEmail']);
 Route::get('/confirm-change-email/{token}', [CentralController::class, 'confirmChangeEmail']); 
 
 Route::post('/resend_email_verification', [CentralController::class, 'resendEmailVerification']);
+Route::post('/send_mail', [CentralController::class, 'sendMail']);
 
 
 
