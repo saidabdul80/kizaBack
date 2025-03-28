@@ -93,6 +93,16 @@ class AuthController extends Controller
             'email' => 'required|email|unique:customers',
             'password' => 'required|min:6',
         ]);
+        //check if the customer is already registered and not verified
+        $exists = Customer::where('email', $request->email)->first();
+        
+        if($exists){
+            if(!$exists->email_verified_at){
+                event(new CustomerRegistered($exists));
+                return response()->json(['message' => 'Email not verified. please check your email for the OTP code.', "type" => "EmailNotVerified"], 400);
+            }
+            return response()->json(['message' => 'Email already registered'], 400);
+        }
 
         DB::beginTransaction();
             try {
