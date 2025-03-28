@@ -12,7 +12,6 @@ return new class extends Migration {
             $table->string('email')->unique();
             $table->string('phone')->unique();
             $table->string('password');
-            $table->enum('role', ['admin', 'super_admin'])->default('admin');
             $table->timestamps();
         });
     }

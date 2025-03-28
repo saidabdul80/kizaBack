@@ -2,6 +2,7 @@
 namespace App\Events;
 
 use App\Models\Customer;
+use App\Models\User;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
@@ -12,7 +13,7 @@ class CustomerRegistered
     public $customer;
     public $type;
 
-    public function __construct(Customer $customer, $type = null)
+    public function __construct(Customer|User $customer, $type = null)
     {
         $this->customer = $customer;
         $this->type = $type;

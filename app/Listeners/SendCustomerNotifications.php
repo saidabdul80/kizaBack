@@ -2,6 +2,7 @@
 namespace App\Listeners;
 
 use App\Events\CustomerRegistered;
+use App\Mail\SendMail;
 use App\Mail\SendMailNoQueue;
 use Illuminate\Support\Facades\Mail;
 use App\Services\Util as ServicesUtil;
@@ -22,7 +23,13 @@ class SendCustomerNotifications
             'phone_number_otp_expires_at' => $expired_at,
             'email_otp_expires_at' => $expired_at
         ]);
-    
+        
+        if($type == 'forAdmin'){
+            $user = is_array($customer)?$customer:$customer->toArray();                              
+            Mail::to($user['email'])->send(new SendMail('account_created', "Account Created", $user));
+            return;
+        }
+
         if(!$customer->phone_number_verified_at && ($type == null || $type == 'sms')){
             ServicesUtil::sendSMS(
                 $customer->phone_number,

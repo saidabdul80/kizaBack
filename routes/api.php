@@ -14,17 +14,15 @@ use Illuminate\Support\Facades\Route;
 Route::post('register', [AuthController::class, 'registerCustomer']);
 Route::post('login', [AuthController::class, 'loginCustomer']);
 Route::get('login', fn() => response()->json(['message' => 'Login is not allowed for public routes']))->name('login');
+Route::get('admin/login', fn() => response()->json(['message' => 'Login is not allowed for public routes']))->name('login');
 Route::post('/admin/login', [AuthController::class, 'loginAdmin']);
 
 Route::get('unauth_bootstrap', [AuthController::class, 'unme']);
 
 // Authenticated routes
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware(['auth:customer'])->group(function () {
     Route::post('logout', [AuthController::class, 'logout']);
     Route::get('bootstrap', [AuthController::class, 'me']);
-   
-    // API resources for authenticated users
-    Route::apiResource('users', UserController::class);
     Route::post('/upload_documents', [UserController::class, 'uploadDocuments']);
     Route::put('/users/{id}/notifications', [UserController::class, 'updateNotificationPreferences']);
     Route::get('/users/{id}/notifications', [NotificationController::class, 'updateNotificationPreferences']);
@@ -43,9 +41,17 @@ Route::middleware('auth:sanctum')->group(function () {
     });
     
 });
-Route::apiResource('exchange-rates', ExchangeRateController::class);
+
+Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::get('bootstrap', [AuthController::class, 'meAdmin']);
+    Route::get('unauth_bootstrap', [AuthController::class, 'unmeAdmin']);
+    Route::apiResource('users', UserController::class);
+    Route::apiResource('exchange-rates', ExchangeRateController::class);
+});
 
 Route::get('/exchange_rates/{currencyCode}', [ExchangeRateController::class, 'getRatesByCurrency']);
+Route::get('/exchange-rates/all', [ExchangeRateController::class, 'index']);
 Route::post('/resend_phone_number_verification', [CentralController::class, 'resendPhoneNumberVerification']);
 Route::post('/confirm_phone_number_verification', [CentralController::class, 'confirmPhoneNumberVerification']);
 Route::post('/verify_email', [CentralController::class, 'verifyEmail']); 

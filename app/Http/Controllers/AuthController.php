@@ -38,26 +38,24 @@ class AuthController extends Controller
         return response()->json($user, 201);
     }
 
-    public function login(Request $request)
+    public function loginAdmin(Request $request)
     {
-        return response()->json(['message' => 'Login is not allowed for public routes']);
         $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
 
         $user = User::where('email', $request->email)->first();
 
         if (!$user || !Hash::check($request->password, $user->password)) {
-            throw ValidationException::withMessages([
-                'email' => ['The provided credentials are incorrect.'],
-            ]);
+            return response()->json(['message' => 'Invalid credentials'], 401);
         }
 
-        $token = $user->createToken('auth_token')->plainTextToken;
-
+        $token = $user->createToken('AdminToken', ['admin'])->plainTextToken;
         return response()->json(['access_token' => $token, 'token_type' => 'Bearer', 'user' => $user]);
+        
     }
+
 
     public function logout(Request $request)
     {
@@ -71,10 +69,20 @@ class AuthController extends Controller
         return response()->json(["customer"=>new CustomerResource($request->user())]);
     }
 
+    public function meAdmin(Request $request)
+    {
+        return response()->json(["user"=>$request->user()]);
+    }
+
     public function unme(Request $request)
     {
         return response()->json([]);
     }
+
+    public function unmeAdmin(Request $request)
+    {
+        return response()->json([]);
+    }    
 
     public function registerCustomer(Request $request)
     {
@@ -96,23 +104,6 @@ class AuthController extends Controller
                 'password' => Hash::make($request->password),
             ]);
             event(new CustomerRegistered($customer));
-            // $code = generate_random_number();
-            // $mailCode = generate_random_number();
-            // $expired_at = expires_at();
-            // $customer->update([
-            //     'email_otp' => $mailCode,
-            //     'phone_number_otp' => $code,
-            //     'phone_number_otp_expires_at' => $expired_at,
-            //     'email_otp_expires_at' => $expired_at
-            // ]);
-        
-            // Util::sendSMS($customer->phone_number, 'Your OTP code is ' . $code . ' and expires in 10 minutes.', 'single');
-            // Mail::to($customer->email)->send(new SendMailNoQueue('otp','Kiza Email Verification',[
-            //     'name' => $customer->first_name,
-            //     'otp' => $mailCode,
-            //     'expired_at' => $expired_at
-            // ]));
-
             DB::commit();
             return response()->json([
                 //'token' => $customer->createToken('customer_token')->plainTextToken,

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "KIZA",
-        "_postman_id": "0acc18cd-2cfb-417b-9a28-ce67318463fd",
+        "_postman_id": "df982a45-32fe-4cd0-baee-76fd6bcfe56a",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -45,7 +45,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"mbcljelcevze\",\"last_name\":\"wkufxdubverdejqdxyjjwtawwdpwvdvetgijdlougfsthawjifpjnpmvqmahrfxppjdcfnyvxavspfxgxsaymvsi\",\"phone_number\":\"voluptates\",\"email\":\"smurphy@example.com\",\"password\":\"#RzWf6)N.qT{}V,M\"}"
+                            "raw": "{\"first_name\":\"ksnikbesdijpguxi\",\"last_name\":\"pxkabevwdfbwfzbqwcqgjvmxkicwezuyymnqkbybhbmqoubmrrxkeuqsxkbrnpcrgydntcutidlffqg\",\"phone_number\":\"qui\",\"email\":\"arturo35@example.net\",\"password\":\"NpKh[AV\"}"
                         },
                         "description": "",
                         "auth": {
@@ -80,7 +80,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"xkovacek@example.net\",\"password\":\"voluptatem\"}"
+                            "raw": "{\"email\":\"janick16@example.net\",\"password\":\"dolore\"}"
                         },
                         "description": "",
                         "auth": {
@@ -140,6 +140,93 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "GET api\/admin\/login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/admin\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/admin\/login"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"message\":\"Login is not allowed for public routes\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/admin\/login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/admin\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/admin\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"steuber.lempi@example.org\",\"password\":\"molestiae\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 },
                 {
                     "name": "GET api\/unauth_bootstrap",
@@ -271,380 +358,11 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
                             "name": ""
                         }
                     ]
-                },
-                {
-                    "name": "GET api\/users",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/users",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/users"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Authorization",
-                                "value": "Bearer "
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "POST api\/users",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/users",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/users"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Authorization",
-                                "value": "Bearer "
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"first_name\":\"accusamus\",\"last_name\":\"vero\",\"email\":\"wolf.danyka@example.org\",\"phone_number\":\"cumque\",\"password\":\"0-FwCgK[!\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "GET api\/users\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/users\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/users\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "reprehenderit",
-                                    "description": "The ID of the user."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Authorization",
-                                "value": "Bearer "
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "PUT api\/users\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/users\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/users\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "earum",
-                                    "description": "The ID of the user."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Authorization",
-                                "value": "Bearer "
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"first_name\":\"eligendi\",\"last_name\":\"et\",\"password\":\"-';*d6yPA\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "DELETE api\/users\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/users\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/users\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "non",
-                                    "description": "The ID of the user."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Authorization",
-                                "value": "Bearer "
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "POST api\/upload_documents",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/upload_documents",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/upload_documents"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "multipart\/form-data"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Authorization",
-                                "value": "Bearer "
-                            }
-                        ],
-                        "body": {
-                            "mode": "formdata",
-                            "formdata": [
-                                {
-                                    "key": "id",
-                                    "value": "eum",
-                                    "type": "text",
-                                    "description": "The <code>id<\/code> of an existing record in the users table."
-                                },
-                                {
-                                    "key": "type",
-                                    "value": "permanent_residence_card",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "file",
-                                    "src": [],
-                                    "type": "file"
-                                }
-                            ]
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "PUT api\/users\/{id}\/notifications",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/users\/:id\/notifications",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/users\/:id\/notifications",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "omnis",
-                                    "description": "The ID of the user."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Authorization",
-                                "value": "Bearer "
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"notify_security_alerts\":false,\"notify_ajo_alerts\":true,\"notify_product_announcements\":false,\"notify_support_tickets\":true}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "PUT api\/users\/{id}\/account-details",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/users\/:id\/account-details",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/users\/:id\/account-details",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "quidem",
-                                    "description": "The ID of the user."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Authorization",
-                                "value": "Bearer "
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"account_number\":\"odio\",\"bank_name\":\"est\",\"account_name\":\"rem\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
                 },
                 {
                     "name": "GET api\/customers",
@@ -692,8 +410,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
                             "name": ""
                         }
                     ]
@@ -710,7 +428,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "illum",
+                                    "value": "voluptatibus",
                                     "description": "The ID of the customer."
                                 }
                             ]
@@ -752,8 +470,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
                             "name": ""
                         }
                     ]
@@ -887,8 +605,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
                             "name": ""
                         }
                     ]
@@ -919,7 +637,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"amount\":10,\"currency_id_from\":\"nemo\",\"currency_id_to\":\"velit\",\"method\":\"bank_deposit\",\"save_recipient\":true,\"recipient\":{\"first_name\":\"ywklvrigmegcnltsmkebcquar\",\"last_name\":\"hemvtimbzdgfxe\",\"phone_number\":\"xykgbnsljaviqr\",\"email\":\"trantow.kennedy@example.com\",\"bank_name\":\"rjwueeteorxpmpfjbjlx\",\"account_name\":\"xo\",\"account_number\":\"ycwt\"}}"
+                            "raw": "{\"amount\":29,\"currency_id_from\":\"qui\",\"currency_id_to\":\"earum\",\"method\":\"cash_pick_up\",\"save_recipient\":false,\"recipient\":{\"first_name\":\"rja\",\"last_name\":\"brewvwntbxfopezcqmimmgh\",\"phone_number\":\"ase\",\"email\":\"wilson.borer@example.org\",\"bank_name\":\"vihljxtmiwtldqoj\",\"account_name\":\"kszhziqgrligcb\",\"account_number\":\"ecsqjar\"}}"
                         },
                         "description": "",
                         "auth": {
@@ -940,7 +658,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "temporibus",
+                                    "value": "magni",
                                     "description": "The ID of the transaction."
                                 }
                             ]
@@ -982,8 +700,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
                             "name": ""
                         }
                     ]
@@ -1022,7 +740,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"status\":\"initiated\"}"
+                            "raw": "{\"status\":\"processing\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1117,8 +835,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
                             "name": ""
                         }
                     ]
@@ -1135,7 +853,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "officiis",
+                                    "value": "nam",
                                     "description": "The ID of the saved recipient."
                                 }
                             ]
@@ -1177,8 +895,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
                             "name": ""
                         }
                     ]
@@ -1195,7 +913,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "repudiandae",
+                                    "value": "numquam",
                                     "description": "The ID of the saved recipient."
                                 }
                             ]
@@ -1224,13 +942,45 @@
                     "response": []
                 },
                 {
-                    "name": "GET api\/exchange-rates",
+                    "name": "POST api\/admin\/logout",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/exchange-rates",
+                            "path": "api\/admin\/logout",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/exchange-rates"
+                            "raw": "{{baseUrl}}\/api\/admin\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/admin\/bootstrap",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/admin\/bootstrap",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/admin\/bootstrap"
                         },
                         "method": "GET",
                         "header": [
@@ -1269,20 +1019,124 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 200,
-                            "body": "[{\"id\":1,\"currency_id_from\":1,\"currency_id_to\":2,\"rate\":\"1300.500000\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":1,\"code\":\"USD\",\"name\":\"US Dollar\",\"symbol\":\"$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/us.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":2,\"currency_id_from\":2,\"currency_id_to\":1,\"rate\":\"0.000770\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":1,\"code\":\"USD\",\"name\":\"US Dollar\",\"symbol\":\"$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/us.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":3,\"currency_id_from\":3,\"currency_id_to\":2,\"rate\":\"1400.750000\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":3,\"code\":\"EUR\",\"name\":\"Euro\",\"symbol\":\"\\u20ac\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/eu.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":4,\"currency_id_from\":2,\"currency_id_to\":3,\"rate\":\"0.000710\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":3,\"code\":\"EUR\",\"name\":\"Euro\",\"symbol\":\"\\u20ac\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/eu.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":5,\"currency_id_from\":4,\"currency_id_to\":2,\"rate\":\"950.300000\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":4,\"code\":\"CAD\",\"name\":\"Canadian Dollar\",\"symbol\":\"C$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ca.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":6,\"currency_id_from\":2,\"currency_id_to\":4,\"rate\":\"0.001050\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":4,\"code\":\"CAD\",\"name\":\"Canadian Dollar\",\"symbol\":\"C$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ca.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}}]",
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "POST api\/exchange-rates",
+                    "name": "GET api\/admin\/unauth_bootstrap",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/exchange-rates",
+                            "path": "api\/admin\/unauth_bootstrap",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/exchange-rates"
+                            "raw": "{{baseUrl}}\/api\/admin\/unauth_bootstrap"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display a listing of users.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/admin\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/admin\/users"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created user in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/admin\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/admin\/users"
                         },
                         "method": "POST",
                         "header": [
@@ -1301,7 +1155,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"currency_id_from\":\"velit\",\"currency_id_to\":\"ipsam\",\"rate\":10.8}"
+                            "raw": "{\"name\":\"vhgacujceqxpxqzlfmt\",\"email\":\"yherman@example.org\",\"password\":\"T]'%<G>*\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1311,13 +1165,243 @@
                     "response": []
                 },
                 {
-                    "name": "PUT api\/exchange-rates\/{id}",
+                    "name": "Display the specified user.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/exchange-rates\/:id",
+                            "path": "api\/admin\/users\/:id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/exchange-rates\/:id",
+                            "raw": "{{baseUrl}}\/api\/admin\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "14",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/admin\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/admin\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "16",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"ibsnsqrbetteiq\",\"password\":\"gXZ)ZE+XKB`,A'\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified user from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/admin\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/admin\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "5",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/admin\/exchange-rates",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/admin\/exchange-rates",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/admin\/exchange-rates"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/admin\/exchange-rates",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/admin\/exchange-rates",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/admin\/exchange-rates"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"currency_id_from\":\"accusamus\",\"currency_id_to\":\"consequatur\",\"rate\":79416.627}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api\/admin\/exchange-rates\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/admin\/exchange-rates\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/admin\/exchange-rates\/:id",
                             "variable": [
                                 {
                                     "id": "id",
@@ -1344,7 +1428,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"rate\":196977.468345}"
+                            "raw": "{\"rate\":33262}"
                         },
                         "description": "",
                         "auth": {
@@ -1354,13 +1438,13 @@
                     "response": []
                 },
                 {
-                    "name": "DELETE api\/exchange-rates\/{id}",
+                    "name": "DELETE api\/admin\/exchange-rates\/{id}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/exchange-rates\/:id",
+                            "path": "api\/admin\/exchange-rates\/:id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/exchange-rates\/:id",
+                            "raw": "{{baseUrl}}\/api\/admin\/exchange-rates\/:id",
                             "variable": [
                                 {
                                     "id": "id",
@@ -1454,6 +1538,58 @@
                     ]
                 },
                 {
+                    "name": "GET api\/exchange-rates\/all",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/exchange-rates\/all",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/exchange-rates\/all"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "[{\"id\":1,\"currency_id_from\":1,\"currency_id_to\":2,\"rate\":\"1300.500000\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":1,\"code\":\"USD\",\"name\":\"US Dollar\",\"symbol\":\"$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/us.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":2,\"currency_id_from\":2,\"currency_id_to\":1,\"rate\":\"0.000770\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":1,\"code\":\"USD\",\"name\":\"US Dollar\",\"symbol\":\"$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/us.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":3,\"currency_id_from\":3,\"currency_id_to\":2,\"rate\":\"1400.750000\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":3,\"code\":\"EUR\",\"name\":\"Euro\",\"symbol\":\"\\u20ac\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/eu.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":4,\"currency_id_from\":2,\"currency_id_to\":3,\"rate\":\"0.000710\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":3,\"code\":\"EUR\",\"name\":\"Euro\",\"symbol\":\"\\u20ac\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/eu.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":5,\"currency_id_from\":4,\"currency_id_to\":2,\"rate\":\"950.300000\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":4,\"code\":\"CAD\",\"name\":\"Canadian Dollar\",\"symbol\":\"C$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ca.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}},{\"id\":6,\"currency_id_from\":2,\"currency_id_to\":4,\"rate\":\"0.001050\",\"is_active\":true,\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\",\"currency_from\":{\"id\":2,\"code\":\"NGN\",\"name\":\"Nigerian Naira\",\"symbol\":\"\\u20a6\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ng.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"},\"currency_to\":{\"id\":4,\"code\":\"CAD\",\"name\":\"Canadian Dollar\",\"symbol\":\"C$\",\"flag\":\"https:\\\/\\\/flagcdn.com\\\/ca.svg\",\"created_at\":\"2025-03-10T09:53:45.000000Z\",\"updated_at\":\"2025-03-10T09:53:45.000000Z\"}}]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "POST api\/resend_phone_number_verification",
                     "request": {
                         "url": {
@@ -1479,7 +1615,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone_number\":\"awufhiwitbvlsjdxnfodvboyqlmtfbghkbpzlwyh\"}"
+                            "raw": "{\"phone_number\":\"baeqfwocojwkflfgaxlvnnusdjuhtvsxiusqhgtcrmeejspisnywstuomhkqgvzmzejrvngwyswezseoon\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1514,7 +1650,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone_number\":\"facere\",\"otp\":\"voluptate\"}"
+                            "raw": "{\"phone_number\":\"commodi\",\"otp\":\"sit\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1549,7 +1685,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"grimes.garrick@example.net\",\"otp\":\"dolorum\"}"
+                            "raw": "{\"email\":\"tromp.claudie@example.com\",\"otp\":\"corrupti\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1570,7 +1706,7 @@
                                 {
                                     "id": "token",
                                     "key": "token",
-                                    "value": "at",
+                                    "value": "et",
                                     "description": ""
                                 }
                             ]
@@ -1644,7 +1780,42 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"savanna.zemlak@example.com\"}"
+                            "raw": "{\"email\":\"dach.onie@example.org\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/send_mail",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/send_mail",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/send_mail"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer "
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"gust13@example.org\",\"name\":\"voluptate\",\"message\":\"quidem\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1679,7 +1850,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"repellat\"}"
+                            "raw": "{\"username\":\"ut\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1714,7 +1885,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"otp\":\"widj\",\"email\":\"irma78@example.com\",\"password\":\"](4S$1Fm\"}"
+                            "raw": "{\"otp\":\"g\",\"email\":\"elnora.gleason@example.net\",\"password\":\"jzwb>\\\"Uw|+\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1749,7 +1920,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"eveniet\",\"type_id\":\"vero\"}"
+                            "raw": "{\"type\":\"facere\",\"type_id\":\"tempore\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1770,7 +1941,7 @@
                                 {
                                     "id": "number",
                                     "key": "number",
-                                    "value": "et",
+                                    "value": "maiores",
                                     "description": ""
                                 }
                             ]
