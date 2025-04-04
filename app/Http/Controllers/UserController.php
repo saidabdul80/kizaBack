@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Events\AccountCreated;
 use App\Http\Resources\CustomerResource;
 use App\Mail\SendMailNoQueue;
+use App\Models\Transaction;
 use App\Models\User;
 use App\Services\Util;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
@@ -84,19 +86,51 @@ class UserController extends Controller
     {
         $request->validate([
             'file' => 'required|file|max:20480',
-            'id' => 'required|exists:users,id',
-            'type' => 'required|in:nin_slip,international_passport,utility_bills,drivers_license,permanent_residence_card,proof_of_address,profile_picture',
+            'id' => 'required',
+            'type' => 'required|in:nin_slip,international_passport,utility_bills,drivers_license,permanent_residence_card,proof_of_address,profile_picture,receipt',
         ]);
-        $user = $request->user();
-        $key =$request->type.'_url';
+     
 
-        if($request->type == 'profile_picture'){
-                $key ='picture_url';
+        switch ($request->type) {
+            case 'receipts':
+                $transaction = Transaction::find($request->id);
+                $receipts = $transaction->receipts ??[];
+                $receipts[] = Util::upload($request->file('file'), 'receipts/'.$request->id.'/'.Str::random(20));
+                $transaction->update([
+                    'receipts'=> $receipts
+                ]);
+                break;
+            default:
+                $user = $request->user();
+                $key =$request->type.'_url';
+                if($request->type == 'profile_picture'){
+                        $key ='picture_url';
+                }
+                $user->update([
+                    $key => Util::upload($request->file('file'), 'uploads/'.$key),
+                ]);
+                return response()->json( new CustomerResource($user), 200);
+                break;
         }
-        
-        $user->update([
-            $key => Util::upload($request->file('file'), 'uploads/'.$key),
+    }
+
+    public function deleteReceipt(Request $request){
+        $request->validate([
+            'index' => 'required',
+            'id' => 'required',
         ]);
-        return response()->json( new CustomerResource($user), 200);
+     
+        $transaction = Transaction::find($request->id);
+        $receipts = $transaction->receipts ??[];
+        if(empty($receipts)){
+            return response()->json(['message' => 'No receipts found'], 400);
+        }
+
+        array_splice($receipts,$request->index,1);
+        $transaction->update([
+            'receipts'=> $receipts
+        ]);
+
+        return response()->json(['message' => 'Receipt deleted successfully'], 200);
     }
 }

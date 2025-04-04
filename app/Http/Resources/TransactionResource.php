@@ -2,6 +2,7 @@
 namespace App\Http\Resources;
 
 use App\Enums\Methods;
+use App\Services\Util;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -30,10 +31,23 @@ class TransactionResource extends JsonResource
             'total_amount'  => $this->total_amount,
             'status'        => $this->status,
             'reference'     => $this->reference,
+            'receipts'      => $this->getReceipts($this->receipts), 
             'created_at'    => $this->created_at->toDateTimeString(),
         ];
     }
     
+    protected function getReceipts($receipts){
+
+        if(!$receipts){
+            return [];
+        }
+
+        foreach ($receipts as $key => &$receipt) {
+            $receipts[$key] =  Util::publicUrl($receipt);
+        }
+
+        return $receipts;
+    }
      /**
      * Format recipient details to match RecipientResource structure.
      *

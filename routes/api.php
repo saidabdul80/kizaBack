@@ -21,9 +21,9 @@ Route::get('unauth_bootstrap', [AuthController::class, 'unme']);
 
 // Authenticated routes
 Route::middleware(['auth:customer'])->group(function () {
+    Route::post('/upload_documents', [UserController::class, 'uploadDocuments']);
     Route::post('logout', [AuthController::class, 'logout']);
     Route::get('bootstrap', [AuthController::class, 'me']);
-    Route::post('/upload_documents', [UserController::class, 'uploadDocuments']);
     Route::put('/users/{id}/notifications', [UserController::class, 'updateNotificationPreferences']);
     Route::get('/users/{id}/notifications', [NotificationController::class, 'updateNotificationPreferences']);
     Route::put('/users/{id}/account-details', [UserController::class, 'updateAccountDetails']);

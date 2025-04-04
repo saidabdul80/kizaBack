@@ -12,7 +12,7 @@ class Transaction extends Model
     protected $fillable = [
         'customer_id', 'amount', 'currency_id_from', 'currency_id_to',
         'recipient_id', 'recipients', 'type', 'rate', 'fees', 'status', 'method',
-        'receipt_path', 'processed_by', 'reference', 'total_amount'
+        'receipt_path', 'processed_by', 'reference', 'total_amount', 'receipts'
     ];
 
     protected $casts = [
@@ -21,6 +21,7 @@ class Transaction extends Model
         'rate' => 'decimal:4',
         'total_amount' => 'decimal:2',
         'recipients' => 'array', 
+        'receipts'=> 'array'
     ];
 
     ///protected static $secured = ['email']; 
