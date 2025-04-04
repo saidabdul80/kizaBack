@@ -92,7 +92,7 @@ class UserController extends Controller
      
 
         switch ($request->type) {
-            case 'receipts':
+            case 'receipt':
                 $transaction = Transaction::find($request->id);
                 $receipts = $transaction->receipts ??[];
                 $receipts[] = Util::upload($request->file('file'), 'receipts/'.$request->id.'/'.Str::random(20));
