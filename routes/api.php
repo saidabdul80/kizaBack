@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('register', [AuthController::class, 'registerCustomer']);
 Route::post('login', [AuthController::class, 'loginCustomer']);
 Route::get('login', fn() => response()->json(['message' => 'Login is not allowed for public routes']))->name('login');
-Route::get('admin/login', fn() => response()->json(['message' => 'Login is not allowed for public routes']))->name('login');
+Route::get('admin/login', fn() => response()->json(['message' => 'Login is not allowed for public routes']))->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'loginAdmin']);
 
 Route::get('unauth_bootstrap', [AuthController::class, 'unme']);
