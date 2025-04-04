@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\AccountCreated;
+use App\Http\Resources\CustomerResource;
 use App\Mail\SendMailNoQueue;
 use App\Models\User;
 use App\Services\Util;
@@ -77,5 +78,25 @@ class UserController extends Controller
     {
         $user->delete();
         return response()->json(['message' => 'User deleted successfully'], 200);
+    }
+
+    public function uploadDocuments(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|file|max:20480',
+            'id' => 'required|exists:users,id',
+            'type' => 'required|in:nin_slip,international_passport,utility_bills,drivers_license,permanent_residence_card,proof_of_address,profile_picture',
+        ]);
+        $user = $request->user();
+        $key =$request->type.'_url';
+
+        if($request->type == 'profile_picture'){
+                $key ='picture_url';
+        }
+        
+        $user->update([
+            $key => Util::upload($request->file('file'), 'uploads/'.$key),
+        ]);
+        return response()->json( new CustomerResource($user), 200);
     }
 }
