@@ -229,8 +229,8 @@ class CentralController extends Controller
     }
 
     public function testSms($number){
-
-        Util::sendSMS('+2348065291757', 'Test SMS');
+       // Util::verifyPhoneNumber($number);
+        Util::sendSMS(validate_phone_number($number), 'Test SMS');
     }
 
     private function isUserAlreadyVerified($user, $verificationType)
