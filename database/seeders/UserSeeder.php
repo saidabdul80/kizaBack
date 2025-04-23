@@ -10,6 +10,6 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::factory()->count(10)->create();
-        User::first()->update(['email'=> 'ajo-user@gmail.com']);
+        User::first()->update(['email'=> 'admin@gmail.com']);
     }
 }

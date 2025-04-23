@@ -86,6 +86,7 @@ class AuthController extends Controller
 
     public function registerCustomer(Request $request)
     {
+            
         $request->validate([
             'first_name' => 'required|min:3',
             'last_name' => 'required|min:3',
@@ -93,9 +94,10 @@ class AuthController extends Controller
             'email' => 'required|email|unique:customers',
             'password' => 'required|min:6',
         ]);
+        
         //check if the customer is already registered and not verified
         $exists = Customer::where('email', $request->email)->first();
-        
+
         if($exists){
             if(!$exists->email_verified_at){
                 event(new CustomerRegistered($exists));

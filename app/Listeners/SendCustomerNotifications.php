@@ -23,7 +23,7 @@ class SendCustomerNotifications
             'phone_number_otp_expires_at' => $expired_at,
             'email_otp_expires_at' => $expired_at
         ]);
-        
+
         if($type == 'forAdmin'){
             $user = is_array($customer)?$customer:$customer->toArray();                              
             Mail::to($user['email'])->send(new SendMail('account_created', "Account Created", $user));
@@ -32,7 +32,7 @@ class SendCustomerNotifications
 
         if(!$customer->phone_number_verified_at && ($type == null || $type == 'sms')){
             ServicesUtil::sendSMS(
-                $customer->phone_number,
+               validate_phone_number($customer->phone_number),
                 'Your OTP code is ' . $customer->phone_number_otp . ' and expires in 10 minutes.',
                 'single'
             );
