@@ -19,7 +19,7 @@ Route::post('/admin/login', [AuthController::class, 'loginAdmin']);
 
 Route::get('unauth_bootstrap', [AuthController::class, 'unme']);
 
-// Authenticated routes
+// Authenticated routes  
 Route::middleware(['auth:customer'])->group(function () {
     Route::post('/upload_documents', [UserController::class, 'uploadDocuments']);
     Route::post('logout', [AuthController::class, 'logout']);
