@@ -48,6 +48,7 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::get('unauth_bootstrap', [AuthController::class, 'unmeAdmin']);
     Route::apiResource('users', UserController::class);
     Route::apiResource('exchange-rates', ExchangeRateController::class);
+    Route::apiResource('customers', CustomerController::class);
 });
 
 Route::get('/exchange_rates/{currencyCode}', [ExchangeRateController::class, 'getRatesByCurrency']);
