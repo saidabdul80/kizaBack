@@ -50,8 +50,20 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::get('unauth_bootstrap', [AuthController::class, 'unmeAdmin']);
     Route::apiResource('users', UserController::class);
     Route::apiResource('exchange-rates', ExchangeRateController::class);
-    Route::apiResource('customers', CustomerController::class);
-    Route::apiResource('transactions', TransactionController::class);
+    Route::apiResource('customers', CustomerController::class)->names([
+        'index' => 'admin.customers.index',
+        'show' => 'admin.customers.show',
+        'store' => 'admin.customers.store',
+        'update' => 'admin.customers.update',
+        'destroy' => 'admin.customers.destroy',
+    ]);
+    Route::apiResource('transactions', TransactionController::class)->names([
+        'index' => 'admin.transactions.index',
+        'show' => 'admin.transactions.show',
+        'store' => 'admin.transactions.store',
+        'update' => 'admin.transactions.update',        
+        'destroy' => 'admin.transactions.destroy',
+    ]);
 });
 
 Route::get('/exchange_rates/{currencyCode}', [ExchangeRateController::class, 'getRatesByCurrency']);
