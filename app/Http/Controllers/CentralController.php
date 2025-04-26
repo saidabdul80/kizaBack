@@ -26,6 +26,7 @@ use App\Mail\SendMailNoQueue;
 use App\Models\Ajo;
 use App\Models\AjoMember;
 use App\Models\Customer;
+use App\Models\Transaction;
 use App\Models\User;
 use App\Models\Wallet;
 use App\Models\WalletTransaction;
@@ -897,5 +898,49 @@ class CentralController extends Controller
         $data = $request->all();
         Mail::to(config('default.support_email'))->send(new SendMailNoQueue('support_mail','Support Mail',$data));
         return response()->json(['message' => 'Mail sent successfully.']);
+    }
+
+
+    public function dashboard(Request $request)
+    {
+        $now = Carbon::now();
+        $startOfThisMonth = $now->copy()->startOfMonth();
+        $startOfLastMonth = $now->copy()->subMonth()->startOfMonth();
+        $endOfLastMonth = $now->copy()->subMonth()->endOfMonth();
+    
+        // Total transactions
+        $totalTransactions = Transaction::count();
+        $lastMonthTransactions = Transaction::whereBetween('created_at', [$startOfLastMonth, $endOfLastMonth])->count();
+        $transactionsChange = $lastMonthTransactions > 0
+            ? (($totalTransactions - $lastMonthTransactions) / $lastMonthTransactions) * 100
+            : null;
+    
+        // Pending transactions
+        $pendingTransactions = Transaction::whereIn('status', ['initiated', 'processing'])->count();
+    
+        // Successful transactions this month
+        $successfulThisMonth = Transaction::where('status', 'successful')
+            ->where('created_at', '>=', $startOfThisMonth)
+            ->count();
+        $totalThisMonth = Transaction::where('created_at', '>=', $startOfThisMonth)->count();
+        $successRate = $totalThisMonth > 0
+            ? ($successfulThisMonth / $totalThisMonth) * 100
+            : null;
+    
+        // Total users
+        $totalUsers = Customer::count();
+        $lastMonthUsers = Customer::whereBetween('created_at', [$startOfLastMonth, $endOfLastMonth])->count();
+        $usersChange = $lastMonthUsers > 0
+            ? (($totalUsers - $lastMonthUsers) / $lastMonthUsers) * 100
+            : null;
+    
+        return response()->json([
+            'total_transactions' => $totalTransactions,
+            'transactions_change' => $transactionsChange !== null ? round($transactionsChange, 2) : 'N/A',
+            'pending_transactions' => $pendingTransactions,
+            'transaction_success_rate' => $successRate !== null ? round($successRate, 2) : 'N/A',
+            'total_users' => $totalUsers,
+            'users_change' => $usersChange !== null ? round($usersChange, 2) : 'N/A',
+        ]);
     }
 }

@@ -2,6 +2,7 @@
 namespace App\ModelFilters;
 
 use App\Enums\PaymentStatus;
+use Carbon\Carbon;
 use EloquentFilter\ModelFilter;
 
 class TransactionFilter extends ModelFilter
@@ -108,5 +109,89 @@ class TransactionFilter extends ModelFilter
                 });
         });
     }
+
+    /**
+     * Filter by today's transactions
+     */
+    public function today($value)
+    {
+        if ($value) {
+            return $this->whereDate('created_at', Carbon::today());
+        }
+    }
+
+    /**
+     * Filter by this week's transactions
+     */
+    public function thisWeek($value)
+    {
+        if ($value) {
+            return $this->whereBetween('created_at', [
+                Carbon::now()->startOfWeek(),
+                Carbon::now()->endOfWeek()
+            ]);
+        }
+    }
+
+    /**
+     * Filter by this month's transactions
+     */
+    public function thisMonth($value)
+    {
+        if ($value) {
+            return $this->whereBetween('created_at', [
+                Carbon::now()->startOfMonth(),
+                Carbon::now()->endOfMonth()
+            ]);
+        }
+    }
+
+    /**
+     * Filter by last month's transactions
+     */
+    public function lastMonth($value)
+    {
+        if ($value) {
+            return $this->whereBetween('created_at', [
+                Carbon::now()->subMonth()->startOfMonth(),
+                Carbon::now()->subMonth()->endOfMonth()
+            ]);
+        }
+    }
+
+    /**
+     * Filter by this year's transactions
+     */
+    public function thisYear($value)
+    {
+        if ($value) {
+            return $this->whereBetween('created_at', [
+                Carbon::now()->startOfYear(),
+                Carbon::now()->endOfYear()
+            ]);
+        }
+    }
+
+    /**
+     * Filter by minimum amount
+     */
+    public function minAmount($amount)
+    {
+        if (!is_null($amount)) {
+            return $this->where('amount', '>=', $amount);
+        }
+    }
+
+    /**
+     * Filter by maximum amount
+     */
+    public function maxAmount($amount)
+    {
+        if (!is_null($amount)) {
+            return $this->where('amount', '<=', $amount);
+        }
+    }
+
+
 
 }

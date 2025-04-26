@@ -25,9 +25,11 @@ class TransactionController extends Controller
     public function index(Request $request)
     {
 
-        $transactions = Transaction::filter([
-            'customer'   => userId(),
-        ])->with('customer', 'currencyFrom', 'currencyTo', 'recipient')->paginate(15);
+        $filter = $request->all();
+        if($request->user() instanceof \App\Models\Customer){
+            $filter['customer_id'] = $request->user()->id;
+        }
+        $transactions = Transaction::filter($filter)->with('customer', 'currencyFrom', 'currencyTo', 'recipient')->paginate(15);
         return TransactionResource::collection($transactions);
     }
     

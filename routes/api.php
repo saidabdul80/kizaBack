@@ -8,6 +8,7 @@ use App\Http\Controllers\ExchangeRateController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\SavedRecipientController;
 use App\Http\Controllers\TransactionController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 // Public routes
@@ -45,10 +46,12 @@ Route::middleware(['auth:customer'])->group(function () {
 Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::post('logout', [AuthController::class, 'logout']);
     Route::get('bootstrap', [AuthController::class, 'meAdmin']);
+    Route::get('dashboard', [CentralController::class, 'dashboard']);
     Route::get('unauth_bootstrap', [AuthController::class, 'unmeAdmin']);
     Route::apiResource('users', UserController::class);
     Route::apiResource('exchange-rates', ExchangeRateController::class);
     Route::apiResource('customers', CustomerController::class);
+    Route::apiResource('transactions', TransactionController::class);
 });
 
 Route::get('/exchange_rates/{currencyCode}', [ExchangeRateController::class, 'getRatesByCurrency']);
